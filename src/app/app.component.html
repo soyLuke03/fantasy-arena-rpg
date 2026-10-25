@@ -2,7 +2,7 @@
   <aside class="sidebar">
     <div class="brand">
       <div class="brand-mark">✦</div>
-      <div><strong>FANTASY<span>ARENA</span></strong><small>LABORATORIO PVP · V0.6.0</small></div>
+      <div><strong>FANTASY<span>ARENA</span></strong><small>LABORATORIO PVP · V0.10.0</small></div>
     </div>
     <div class="sidebar-section">JUEGO</div>
     <nav class="main-nav" aria-label="Secciones del juego">
@@ -27,8 +27,8 @@
 
   <main class="main-area">
     <header class="topbar">
-      <div class="breadcrumbs"><span>FANTASY ARENA</span><span class="slash">/</span><strong>{{tab==='arena'?'ARENA':tab==='market'?'MERCADO':tab==='roster'?'PLANTILLAS':tab==='trades'?'TRASPASOS':tab==='auction'?'SUBASTAS':tab==='reports'?'RESULTADOS':'LABORATORIO'}}</strong></div>
-      <div class="top-right"><span class="mode-chip">{{state.mode==='bot'?'⚙ VS BOT':'◈ CONTROL DOBLE'}}</span><span class="season-chip">TEMPORADA {{state.season}} · {{remainingTime}}</span><button class="round-btn" aria-label="Configuración" (click)="showSettings=!showSettings">⚙</button></div>
+      <div class="breadcrumbs"><span>FANTASY ARENA</span><span class="slash">/</span><strong>{{seasonFinished?'FIN DE TEMPORADA':tab==='arena'?'ARENA':tab==='market'?'MERCADO':tab==='roster'?'PLANTILLAS':tab==='trades'?'TRASPASOS':tab==='auction'?'SUBASTAS':tab==='reports'?'RESULTADOS':'LABORATORIO'}}</strong></div>
+      <div class="top-right"><span class="mode-chip">{{state.mode==='bot'?'⚙ VS BOT':'◈ CONTROL DOBLE'}}</span><span class="season-chip">TEMPORADA {{state.season}} · {{remainingDays}} jornadas pendientes</span><button class="round-btn" aria-label="Configuración" (click)="showSettings=!showSettings">⚙</button></div>
     </header>
     <div class="page-content">
       @if(showSettings) {
@@ -37,7 +37,7 @@
           <div class="settings-grid">
             <label>Semilla de la simulación <input [(ngModel)]="settingsSeed" maxlength="60" placeholder="ARENA-01"></label>
             <label>Modo rival <select [(ngModel)]="settingsMode"><option value="bot">Contra bot</option><option value="manual">Controlar los dos equipos</option></select></label>
-            <label>Duración de temporada <select [(ngModel)]="settingsDays"><option [ngValue]="3">3 días</option><option [ngValue]="7">7 días</option><option [ngValue]="15">15 días</option><option [ngValue]="30">30 días</option></select></label>
+            <label>Duración de temporada <select [(ngModel)]="settingsDays"><option [ngValue]="3">3 jornadas</option><option [ngValue]="7">7 jornadas</option><option [ngValue]="15">15 jornadas</option><option [ngValue]="30">30 jornadas</option></select></label>
             <label>Estadísticas al empezar temporada <select [(ngModel)]="settingsStatMode"><option value="fixed">Valores fijos (catálogo)</option><option value="random">Aleatorias (±10 %)</option></select></label>
           </div>
           <div class="setting-actions"><p>⚠ Reiniciar elimina la partida y las clasificaciones actuales de este navegador. Exporta antes si quieres conservarla.</p><button class="btn btn-primary" (click)="startGame()">↺ Crear nueva partida</button></div>
@@ -45,87 +45,186 @@
       }
 
       <div class="hero-heading">
-        <div><div class="eyebrow accent">◈ EL COLISEO TE ESPERA</div><h1>{{tab==='arena'?'Arena de combate':tab==='market'?'Mercado de héroes':tab==='roster'?'Tus combatientes':tab==='trades'?'Ofertas de compra':tab==='auction'?'Subastas míticas':tab==='reports'?'Crónicas de batalla':'Laboratorio de balance'}}</h1>
-        <p>{{tab==='arena'?'Forma tu escuadrón, elige una bendición y disputa el enfrentamiento.':tab==='market'?'Un mazo exclusivo por jugador para toda la temporada.':tab==='roster'?'Mejora y organiza los héroes que conservarás durante esta temporada.':tab==='trades'?'Negocia personajes del equipo rival sin compartir los mazos privados.':tab==='auction'?'Míticos de poder fijo y habilidades únicas. Solo puedes conseguirlos pujando.':tab==='reports'?'Revisa las rondas y descubre qué ocurrió durante los combates.':'Analiza las ventajas de clase y prueba escenarios sin gastar recursos.'}}</p></div>
+        <div><div class="eyebrow accent">◈ EL COLISEO TE ESPERA</div><h1>{{seasonFinished?'El Salón de los Campeones':tab==='arena'?'Arena de combate':tab==='market'?'Mercado de héroes':tab==='roster'?'Tus combatientes':tab==='trades'?'Ofertas de compra':tab==='auction'?'Subastas míticas':tab==='reports'?'Crónicas de batalla':'Laboratorio de balance'}}</h1>
+        <p>{{seasonFinished?'La temporada ha terminado. Consulta los resultados antes de comenzar otra.':tab==='arena'?'Forma tu escuadrón, elige una bendición y disputa el enfrentamiento.':tab==='market'?'Un mazo exclusivo por jugador para toda la temporada.':tab==='roster'?'Mejora y organiza los héroes que conservarás durante esta temporada.':tab==='trades'?'Negocia personajes del equipo rival sin compartir los mazos privados.':tab==='auction'?'Míticos de poder fijo y habilidades únicas. Solo puedes conseguirlos pujando.':tab==='reports'?'Revisa las rondas y descubre qué ocurrió durante los combates.':'Analiza las ventajas de clase y prueba escenarios sin gastar recursos.'}}</p></div>
         <div class="heading-emblem" aria-hidden="true">⚔</div>
       </div>
 
       <div class="overview-cards">
-        <div class="overview-card"><div class="small-icon purple">◷</div><div><small>JORNADA ACTUAL</small><strong>{{state.day}} <em>· {{remainingTime}} restantes</em></strong></div></div>
+        <div class="overview-card"><div class="small-icon purple">◷</div><div><small>JORNADA ACTUAL</small><strong>{{state.day}} / {{state.durationDays}} <em>· {{boutsDone}}/5 batallas</em></strong></div></div>
         <div class="overview-card"><div class="small-icon gold">◆</div><div><small>ORO DISPONIBLE</small><strong>{{state.teamA.gold}} <em>monedas</em></strong></div></div>
         <div class="overview-card"><div class="small-icon blue">♛</div><div><small>PUNTOS DE LIGA</small><strong>{{state.scoreA}} <em>pts</em></strong></div></div>
         <div class="overview-card"><div class="small-icon green">✧</div><div><small>VICTORIAS TOTALES</small><strong>{{state.winsA}} <em>ganadas</em></strong></div></div>
       </div>
 
       <div class="toast" role="status"><span class="toast-symbol">✧</span> {{notice}}</div>
+      @if(state.result?.emergencyResetSides?.length){<section class="emergency-notice panel" role="status"><strong>✦ ¡Reinicio de emergencia!</strong><span>{{emergencyResetLabel}} {{emergencyResetPlural?'han':'ha'}} perdido todos sus campeones. {{emergencyResetPlural?'Ya tienen':'Ya tiene'}} tres personajes nuevos por equipo y conserva{{emergencyResetPlural?'n':''}} todas sus victorias y puntos de liga. En la siguiente jornada tendrá que elegir una nueva bendición de temporada.</span></section>}
 
+
+      <!-- El cierre es un estado explícito: se puede consultar indefinidamente sin reset accidental. -->
+      @if(seasonFinished) {
+        <section class="season-finale panel" aria-label="Resumen final de temporada">
+          <div class="finale-crown" aria-hidden="true">♛</div>
+          <small class="eyebrow">TEMPORADA {{state.season}} · {{state.durationDays}} JORNADAS COMPLETADAS</small>
+          <h2>¡Temporada finalizada!</h2>
+          <p>Se han disputado todas las jornadas. Tu plantilla, el oro y las mejoras permanecen intactos hasta que decidas empezar la siguiente temporada.</p>
+          <h3>🏆 {{seasonWinner}}</h3>
+          <div class="finale-results">
+            <div [class.finale-first]="state.scoreA>=state.scoreB"><span>⚔ Equipo A</span><strong>{{state.scoreA}} puntos</strong><small>{{state.winsA}} victorias</small></div>
+            <div [class.finale-first]="state.scoreB>=state.scoreA"><span>◆ Equipo B</span><strong>{{state.scoreB}} puntos</strong><small>{{state.winsB}} victorias</small></div>
+          </div>
+          <div class="finale-mvp"><small>CAMPEÓN MÁS DESTACADO</small><strong>{{endStats.hero}}</strong><span>⚔ {{endStats.kills}} bajas · 🛡 {{endStats.saves}} defensas salvadoras</span></div>
+          <p class="market-hint">Puedes exportar el estado actual antes de reiniciar. El historial de temporadas queda archivado al confirmar.</p>
+          <details class="card-details finale-chronicle"><summary>Ver resumen de la última jornada</summary>@if(state.result;as result){<p>Ganador: {{result.winner==='a'?'Equipo A':'Equipo B'}} · {{result.scoreA}}-{{result.scoreB}} batallas</p><p>Oro: Equipo A +{{result.goldA}} · Equipo B +{{result.goldB}}</p><p>Las cinco batallas están registradas en tu exportación JSON y en el historial conservado hasta iniciar nueva temporada.</p>}</details><div class="finale-actions"><button class="btn btn-outline" (click)="replayLastBout()">▶ Revivir batalla final</button><button class="btn btn-outline" (click)="exportSave()">↓ Exportar resumen y partida</button><button class="btn btn-primary" (click)="beginSeason()">↻ Comenzar nueva temporada</button></div>
+        </section>
+      } @else {
       @if(tab==='arena') {
         <div class="section-heading"><div><small class="eyebrow">ENFRENTAMIENTO DE JORNADA</small><h2>Prepara el duelo</h2></div><span class="muted-tag">MEJOR DE 5 RONDAS</span></div>
         <div class="arena-versus">
-          <div class="versus-team blue-side"><div class="versus-icon">⚔</div><div><small>EQUIPO A</small><h3>Tu escuadrón</h3><p>{{state.teamA.heroes.length}} / 5 combatientes · {{teamAHealth}} PV base</p><span class="tag" [class.tag-ready]="state.teamA.blessing">{{state.teamA.blessing?'Bendición elegida':'Falta elegir bendición'}}</span></div></div>
-          <div class="versus-center"><span>JORNADA {{state.day}}</span><strong>VS</strong><small>Sincronizado · local</small></div>
-          <div class="versus-team red-side"><div class="versus-icon">◆</div><div><small>EQUIPO B</small><h3>{{state.mode==='bot'?'Rival automático':'Rival manual'}}</h3><p>{{state.teamB.heroes.length}} / 5 combatientes · {{teamBHealth}} PV base</p><span class="tag" [class.tag-ready]="state.teamB.blessing">{{state.teamB.blessing?'Bendición elegida':'Falta elegir bendición'}}</span></div></div>
+          <div class="versus-team blue-side"><div class="versus-icon">⚔</div><div><small>EQUIPO A</small><h3>Tu escuadrón</h3><p>{{state.teamA.activeIds.length}} / 5 combatientes · {{teamAHealth}} PV base</p><span class="tag" [class.tag-ready]="state.teamA.blessing">{{state.teamA.blessing?'Bendición elegida':'Falta elegir bendición'}}</span></div></div>
+          <div class="versus-center"><span>JORNADA {{state.day}}</span><strong>VS</strong><small>{{boutsDone}} de 5 · local</small></div>
+          <div class="versus-team red-side"><div class="versus-icon">◆</div><div><small>EQUIPO B</small><h3>{{state.mode==='bot'?'Rival automático':'Rival manual'}}</h3><p>{{state.teamB.activeIds.length}} / 5 combatientes · {{teamBHealth}} PV base</p><span class="tag" [class.tag-ready]="state.teamB.blessing">{{state.teamB.blessing?'Bendición elegida':'Falta elegir bendición'}}</span></div></div>
         </div>
         @if(state.result) {
           <section class="result-banner panel"><span class="big-result-icon">{{state.result.winner==='a'?'♛':'☠'}}</span><div><small>COMBATE FINALIZADO</small><h2>{{state.result.summary}}</h2><p>Marcador final: <b>{{state.result.scoreA}} — {{state.result.scoreB}}</b> · Tres puntos para el equipo vencedor</p></div><div class="result-actions"><button class="btn btn-ghost" (click)="changeTab('reports')">Ver crónica</button><button class="btn btn-primary" (click)="advance()">Siguiente jornada →</button></div></section>
         } @else {
           <div class="two-panel-grid">
             <section class="panel team-panel">
-              <div class="panel-head"><div><small class="eyebrow">PREPARACIÓN</small><h2>Tu escuadrón</h2></div><span class="tag">{{state.teamA.heroes.length}}/5</span></div>
+              <div class="panel-head"><div><small class="eyebrow">PREPARACIÓN</small><h2>Tus titulares</h2></div><span class="tag">{{state.teamA.activeIds.length}}/5</span></div>
               <div class="mini-roster">
-                @for(h of state.teamA.heroes;track h.id) {<div class="mini-hero"><div class="hero-symbol" [ngClass]="heroClass(h.className)">{{heroIcon(h.className)}}</div><div><strong>{{h.name}}</strong><small>{{h.className}} · {{h.tier}} · NV. {{h.level+1}}</small></div><span class="small-power">{{h.stats.attack}} ATQ</span></div>}
-                @for(slot of freeSlots;track slot){<button class="empty-slot" (click)="changeTab('market')">＋ Hueco libre — ir al mercado</button>}
+                @for(h of starters('a');track h.id) {<div class="mini-hero"><div class="hero-symbol" [ngClass]="heroClass(h.className)">{{heroIcon(h.className)}}</div><div><strong>{{h.name}}</strong><small>{{h.className}} · {{h.tier}} · NV. {{h.level+1}}</small></div><span class="small-power">{{h.stats.attack}} ATQ</span></div>}
+                @for(slot of freeSlots;track slot){<button class="empty-slot" (click)="changeTab('roster');chooseSide('a')">＋ Hueco libre — elegir desde el almacén</button>}
               </div>
-              <button class="btn btn-outline full-btn" (click)="changeTab('market')">◈ Ir al mercado de héroes →</button>
+              <button class="btn btn-outline full-btn" (click)="changeTab('roster');chooseSide('a')">♟ Gestionar alineación y almacén →</button>
             </section>
             <section class="panel blessing-panel"><div class="panel-head"><div><small class="eyebrow">BONIFICACIÓN DE TEMPORADA</small><h2>Bendición de temporada</h2></div><span class="tag">1 DE 3</span></div>
-              <p class="panel-description">La bendición elegida permanece durante toda la temporada; se bloquea tras el primer combate.</p>
+              <p class="panel-description">Se conserva durante toda la temporada y se bloquea tras la primera batalla. Además, eliges una bendición temporal cada jornada.</p>
+              @if(blessingIsLocked('a')){<p class="button-hint">ⓘ Bendición bloqueada: solo puede cambiarse al inicio de temporada o tras un reinicio de emergencia.</p>}
               <div class="blessing-list">
-                @for(key of state.blessingChoices;track key){<button class="blessing-item" [class.picked]="state.teamA.blessing===key" [disabled]="blessingLocked" (click)="blessing('a',key)"><span class="blessing-icon">{{allBlessings[key].icon}}</span><span><strong>{{allBlessings[key].name}}</strong><small>{{allBlessings[key].description}}</small></span><span class="choice-mark">{{state.teamA.blessing===key?'●':'○'}}</span></button>}
+                @for(key of state.blessingChoices;track key){<button class="blessing-item" [class.picked]="state.teamA.blessing===key" [disabled]="blessingIsLocked('a')" title="La bendición de temporada se bloquea después del primer combate" (click)="blessing('a',key)"><span class="blessing-icon">{{allBlessings[key].icon}}</span><span><strong>{{allBlessings[key].name}}</strong><small>{{allBlessings[key].description}}</small></span><span class="choice-mark">{{state.teamA.blessing===key?'●':'○'}}</span></button>}
               </div>
             </section>
           </div>
           @if(state.mode==='manual') {
             <section class="panel second-team-panel"><div class="panel-head"><div><small class="eyebrow">CONTROL DOBLE ACTIVO</small><h2>Preparación del Equipo B</h2></div><button class="btn btn-outline btn-sm" (click)="chooseSide('b');changeTab('market')">Gestionar equipo B →</button></div>
               <p class="panel-description">Elige también su bendición antes de combatir. Su mercado y presupuesto se pueden gestionar desde las pestañas.</p>
+              @if(blessingIsLocked('b')){<p class="button-hint">ⓘ Bendición bloqueada: la temporada ya ha comenzado.</p>}
               <div class="blessing-list horizontal">
-                @for(key of state.blessingChoices;track key){<button class="blessing-item" [class.picked]="state.teamB.blessing===key" [disabled]="blessingLocked" (click)="blessing('b',key)"><span class="blessing-icon">{{allBlessings[key].icon}}</span><span><strong>{{allBlessings[key].name}}</strong><small>{{allBlessings[key].description}}</small></span><span class="choice-mark">{{state.teamB.blessing===key?'●':'○'}}</span></button>}
+                @for(key of state.blessingChoices;track key){<button class="blessing-item" [class.picked]="state.teamB.blessing===key" [disabled]="blessingIsLocked('b')" title="La bendición de temporada se bloquea después del primer combate" (click)="blessing('b',key)"><span class="blessing-icon">{{allBlessings[key].icon}}</span><span><strong>{{allBlessings[key].name}}</strong><small>{{allBlessings[key].description}}</small></span><span class="choice-mark">{{state.teamB.blessing===key?'●':'○'}}</span></button>}
               </div>
             </section>
           }
-          <section class="fight-bar"><div><small>⚡ EL COMBATE SE SIMULA AUTOMÁTICAMENTE</small><strong>{{ready?'Los equipos están preparados para luchar.':'Prepara las bendiciones para desbloquear el combate.'}}</strong></div><button class="btn btn-primary btn-fight" [disabled]="!ready" (click)="fight()">⚔ ¡COMENZAR COMBATE!</button></section>
+          <section class="panel daily-panel">
+            @if(boutsDone>0){<p class="button-hint">ⓘ Las bendiciones de jornada no pueden cambiarse después de la primera batalla.</p>}
+            <div class="panel-head"><div><small class="eyebrow">CADA JORNADA · UNA ELECCIÓN</small><h2>Bendiciones temporales</h2></div><span class="tag">Solo esta jornada</span></div>
+            @for(side of sides;track side) {
+              @if(side==='a' || state.mode==='manual'){
+                <div class="daily-team"><strong>{{side==='a'?'Equipo A':'Equipo B'}}</strong>
+                  <div class="daily-blessings">
+                    @for(key of state.dailyBlessingChoices[side];track key){<button class="blessing-item" [class.picked]="(side==='a'?state.teamA:state.teamB).dailyBlessing===key" [disabled]="boutsDone>0" title="Bloqueada al empezar la primera batalla de la jornada" (click)="dayBlessing(side,key)"><span class="blessing-icon">{{allBlessings[key].icon}}</span><span><strong>{{allBlessings[key].name}}</strong><small>{{allBlessings[key].description}}</small></span></button>}
+                  </div>
+                </div>
+              }
+            }
+          </section>
+          <section class="panel midbattle-panel">
+            <div class="panel-head"><div><small class="eyebrow">DUELO POR FASES</small><h2>Batallas {{boutsDone}} / 5</h2></div><span class="tag">{{5-boutsDone}} restantes</span></div>
+            <div class="battle-pips">@for(i of [1,2,3,4,5];track i){<div [class.finished]="i<=boutsDone" [class.next]="i===boutsDone+1">{{i}}</div>}</div>
+            @if(boutsDone>0){<p class="market-hint">Puedes sustituir a los campeones en peligro entre batallas. Se conservan sus muertes y sus actuaciones. No recibirán mejoras de las batallas en las que descansen.</p>}
+            @for(side of sides;track side){
+              @if(side==='a'||state.mode==='manual'){
+                <div class="tactical-team"><h3>{{side==='a'?'⚔ Equipo A':'◆ Equipo B'}} · Sustituciones</h3>
+                  <div class="lineup-tags">@for(h of starters(side);track h.id){<span class="lineup-tag">{{heroIcon(h.className)}} {{h.name}} <b [class.critical-death]="heroDeaths(side,h.id)>=2">☠ {{heroDeaths(side,h.id)}}/3</b></span>}</div>
+                  @if(bench(side).length){
+                    <div class="rotation-controls">
+                      <label>Retirar <select [(ngModel)]="swapOut[side]"><option value="">Elegir titular</option>@for(h of starters(side);track h.id){<option [value]="h.id">{{h.name}} (☠{{heroDeaths(side,h.id)}})</option>}</select></label>
+                      <label>Entrar <select [(ngModel)]="swapIn[side]"><option value="">Elegir reserva</option>@for(h of bench(side);track h.id){<option [value]="h.id">{{h.name}} (☠{{heroDeaths(side,h.id)}})</option>}</select></label>
+                      <button class="btn btn-outline" [disabled]="!swapOut[side]||!swapIn[side]" title="Debes elegir un titular y una reserva para sustituir" (click)="rotate(side)">⇄ Sustituir</button>
+                      @if(!swapOut[side]||!swapIn[side]){<span class="button-hint">ⓘ Selecciona un titular y una reserva.</span>}
+                    </div>
+                  } @else {<p class="market-hint">No hay suplentes. Puedes fichar reservas antes de la primera batalla.</p>}
+                </div>
+              }
+            }
+          </section>
+
+          <section class="panel formation-summary">
+            <div class="panel-head"><div><small class="eyebrow">CONTROL TÁCTICO</small><h2>Posiciones y órdenes</h2></div><button class="btn btn-outline btn-sm" (click)="changeTab('roster')">Configurar formación →</button></div>
+            <p class="market-hint">Los dos primeros titulares son la delantera; los tres siguientes, retaguardia. Puedes reorganizar y cambiar órdenes entre batallas. Las muertes acumuladas no se borran.</p>
+            <div class="formation-mini-grid">
+              @for(side of sides;track side){<div><b>{{side==='a'?'⚔ Equipo A':'◆ Equipo B'}}</b><div class="mini-lineup">
+                @for(hero of starters(side);track hero.id;let i=$index){<div class="mini-position" [class.is-front]="i<2"><small>{{i<2?'▲ DEL':'▼ RET'}} · {{i+1}}</small><strong>{{hero.name}}</strong><span>{{tacticOf(side,hero.id)==='aggressive'?'⚔ Agresiva':tacticOf(side,hero.id)==='defensive'?'⬡ Defensiva':'◈ Equilibrada'}}</span></div>}
+              </div></div>}
+            </div>
+          </section>
+          <section class="fight-bar"><div><small>⚡ CINCO BATALLAS, UNA CADA VEZ</small><strong>{{ready?'Listo para la siguiente batalla.':'Selecciona bendiciones y un mínimo de 3 titulares por equipo.'}}</strong></div><button class="btn btn-primary btn-fight" [disabled]="!ready" [title]="fightReason()" (click)="fight()">⚔ Simular batalla {{boutsDone+1}}/5</button></section>
+          @if(fightReason()){<p class="button-hint">ⓘ {{fightReason()}}</p>}
+          @if(boutsDone>0){<section class="panel"><h3>Última batalla: {{state.currentBouts[boutsDone-1].winner==='a'?'Gana A':'Gana B'}}</h3><p>Marcador parcial: {{partialScoreA}} — {{boutsDone-partialScoreA}}</p><button class="btn btn-outline" (click)="changeTab('reports')">Ver crónica y muertes →</button></section>}
+
         }
-        <div class="info-foot"><span>✦ Tus héroes continúan toda la temporada</span><span>◈ Estadísticas conservadas entre jornadas</span><span>⬡ 100 % local, sin cuentas</span></div>
+        <div class="info-foot"><span>✦ Hasta 5 titulares y reservas en almacén</span><span>◈ Estadísticas conservadas entre jornadas</span><span>⬡ 100 % local, sin cuentas</span></div>
       }
 
       @if(tab==='market') {
-        <div class="section-heading"><div><small class="eyebrow">ECONOMÍA ROGUELIKE</small><h2>Contrata combatientes</h2></div><div class="head-tools"><span class="gold-balance">◆ {{currentTeam.gold}} ORO</span><button class="btn btn-outline btn-sm" [disabled]="!canEdit || currentTeam.gold<shopRefreshCost" (click)="refresh()">↻ Renovar ({{shopRefreshCost}} ◆)</button></div></div>
+        <div class="section-heading"><div><small class="eyebrow">ECONOMÍA ROGUELIKE</small><h2>Contrata combatientes</h2></div><div class="head-tools"><span class="gold-balance">◆ {{currentTeam.gold}} ORO</span><button class="btn btn-outline btn-sm" [disabled]="!!refreshReason()" [title]="refreshReason()" (click)="refresh()">↻ Renovar ({{shopRefreshCost}} ◆)</button></div></div>
+        @if(refreshReason()){<p class="button-hint">ⓘ Renovar mercado: {{refreshReason()}}</p>}
         <div class="team-switch"><button [class.active]="selectedSide==='a'" (click)="chooseSide('a')">⚔ Tienda A ({{state.markets.a.length}})</button><button [class.active]="selectedSide==='b'" (click)="chooseSide('b')">◆ Tienda B ({{state.markets.b.length}})</button></div>
         <div class="shop-summary"><div><b>{{publicOfferCount}} / {{globalSlots}}</b><span>Ofertas visibles globales</span></div><div><b>{{privateOffers.length}} / {{privateSlots}}</b><span>En esta tienda</span></div><div><b>{{deckRemaining}} / {{deckSize}}</b><span>Tu mazo aún disponible</span></div><div><b>{{seenOffers}}</b><span>Campeones vistos en tu tienda</span></div></div>
-        <p class="market-hint">Baraja de temporada: <b>120 campeones normales</b> repartidos al principio entre mazos exclusivos (<b>{{state.playerDecks.a.length}} para A</b> y <b>{{state.playerDecks.b.length}} para B</b>). La regla <b>9 + 2 × {{2}} jugadores = {{globalSlots}} ofertas</b> limita la suma de los escaparates visibles ({{state.markets.a.length}} + {{state.markets.b.length}}). Ningún campeón puede pasar al mercado del rival ni después de renovar. Las renovaciones priorizan cartas no vistas de tu propio mazo; cuando se agotan, reciclan las no compradas. Un campeón fichado no vuelve a ofertarse esa temporada, ni tras venderlo. Coste 2, 3, 4… monedas, reiniciado cada jornada. {{state.mode==='bot'&&selectedSide==='b'?'Esta tienda es gestionada automáticamente por la IA.':''}}</p>
+        <p class="market-hint">Baraja de temporada: <b>120 campeones normales</b> repartidos al principio entre mazos exclusivos (<b>{{state.playerDecks.a.length}} para A</b> y <b>{{state.playerDecks.b.length}} para B</b>). Cada jugador dispone de <b>6 ofertas visibles</b> ({{globalSlots}} en total), sin desigualdad entre tiendas ({{state.markets.a.length}} + {{state.markets.b.length}}). Ningún campeón puede pasar al mercado del rival ni después de renovar. Las renovaciones priorizan cartas no vistas de tu propio mazo; cuando se agotan, reciclan las no compradas. Un campeón fichado no vuelve a ofertarse esa temporada, ni tras venderlo. Coste 2, 3, 4… monedas, reiniciado cada jornada. {{state.mode==='bot'&&selectedSide==='b'?'Esta tienda es gestionada automáticamente por la IA.':''}}</p>
         <div class="market-grid">
           @for(hero of privateOffers;track hero.id) {
             <article class="market-hero panel" [ngClass]="tierClass(hero.tier)"><div class="market-portrait" [ngClass]="heroClass(hero.className)"><span class="portrait-emblem">{{heroIcon(hero.className)}}</span><span class="portrait-class">{{hero.className | uppercase}}</span></div>
-              <div class="market-content"><div class="market-tags"><span class="tier-pill">{{hero.tier}}</span><span class="tiny-class">{{hero.className}} · Calidad mínima {{hero.minTier}} · Tier máximo {{hero.maxLevel+1}}</span></div><h3>{{hero.name}}</h3><div class="stats-line"><span>♥ {{hero.stats.health}}</span><span>⚔ {{hero.stats.attack}}</span><span>⬡ {{hero.stats.defense}}</span><span>➶ {{hero.stats.speed}}</span></div><div class="future-potential">Calidad máx. {{hero.maxTier}} · Potencial por jornada: ATQ {{hero.caps.attack.min}} / +{{hero.caps.attack.max}}, DEF {{hero.caps.defense.min}} / +{{hero.caps.defense.max}}, VEL {{hero.caps.speed.min}} / +{{hero.caps.speed.max}}, PV {{hero.caps.health.min}} / +{{hero.caps.health.max}}</div><div class="buy-line"><span class="price">◆ {{hero.price}}</span><button class="btn btn-primary btn-sm" [disabled]="!canEdit || currentTeam.gold<hero.price || currentTeam.heroes.length>=5" (click)="buy(hero.id)">Fichar +</button></div></div>
+              <div class="market-content"><div class="market-tags"><span class="tier-pill">{{hero.tier}}</span><span class="tiny-class">{{hero.className}} · Calidad mínima {{hero.minTier}} · Tier máximo {{hero.maxLevel+1}}</span></div><h3>{{hero.name}}</h3><div class="stats-line"><span>♥ {{hero.stats.health}}</span><span>⚔ {{hero.stats.attack}}</span><span>⬡ {{hero.stats.defense}}</span><span>➶ {{hero.stats.speed}}</span></div><details class="card-details"><summary>Ver potencial y límites de mejora</summary><div class="future-potential">Calidad máx. {{hero.maxTier}} · Potencial por jornada: ATQ {{hero.caps.attack.min}} / +{{hero.caps.attack.max}}, DEF {{hero.caps.defense.min}} / +{{hero.caps.defense.max}}, VEL {{hero.caps.speed.min}} / +{{hero.caps.speed.max}}, PV {{hero.caps.health.min}} / +{{hero.caps.health.max}}</div></details><div class="buy-line"><span class="price">◆ {{hero.price}}</span><button class="btn btn-primary btn-sm" [disabled]="!!buyReason(hero)" [title]="buyReason(hero)" (click)="buy(hero.id)">Fichar +</button></div>@if(buyReason(hero)){<p class="button-hint">ⓘ {{buyReason(hero)}}</p>}</div>
             </article>
           } @empty {<p class="empty-box">No hay más personajes disponibles para esta tienda. Los héroes obtenidos no vuelven a aparecer esta temporada.</p>}
         </div>
       }
 
       @if(tab==='roster') {
-        <div class="section-heading"><div><small class="eyebrow">GESTIÓN DE HÉROES</small><h2>Fuerza de combate</h2></div><div class="head-tools"><span class="gold-balance">◆ {{currentTeam.gold}} ORO</span><span class="muted-tag">{{currentTeam.heroes.length}} / 5 PLAZAS</span></div></div>
+        <div class="section-heading"><div><small class="eyebrow">GESTIÓN DE HÉROES</small><h2>Alineación y almacén</h2></div><div class="head-tools"><span class="gold-balance">◆ {{currentTeam.gold}} ORO</span><span class="muted-tag">{{currentTeam.activeIds.length}}/5 ACTIVOS · {{currentTeam.heroes.length}} EN PROPIEDAD</span></div></div>
         @if(state.mode==='manual') {<div class="team-switch"><button [class.active]="selectedSide==='a'" (click)="chooseSide('a')">Equipo A</button><button [class.active]="selectedSide==='b'" (click)="chooseSide('b')">Equipo B</button></div>}
-        <div class="roster-grid">
-          @for(hero of currentTeam.heroes;track hero.id){<article class="roster-card panel"><div class="roster-portrait" [ngClass]="heroClass(hero.className)"><span>{{heroIcon(hero.className)}}</span></div><div class="roster-description"><span class="tiny-class">{{hero.className}} · {{hero.tier}}</span><h3>{{hero.name}}</h3><p>Tier {{hero.level+1}} / {{hero.maxLevel+1}} · Calidad mínima {{hero.minTier}} / Máxima {{hero.maxTier}}</p><p class="market-hint">{{hero.ability ? '★ '+(hero.abilityDescription||hero.ability) : 'Mejorable hasta '+hero.maxTier}}</p><div class="stat-bars"><div><label>VIDA <b>{{hero.stats.health}}</b></label><div class="bar"><span [style.width.%]="hero.stats.health/230*100"></span></div></div><div><label>ATAQUE <b>{{hero.stats.attack}}</b></label><div class="bar"><span [style.width.%]="hero.stats.attack/70*100"></span></div></div><div><label>DEFENSA <b>{{hero.stats.defense}}</b></label><div class="bar"><span [style.width.%]="hero.stats.defense/70*100"></span></div></div><div><label>VELOCIDAD <b>{{hero.stats.speed}}</b></label><div class="bar"><span [style.width.%]="hero.stats.speed/70*100"></span></div></div></div><div class="roster-evolution"><div class="evolution-title">Evolución de estadísticas</div><div class="evolution-row">@for(stat of statFields;track stat.key){<div><small>{{stat.icon}} {{stat.label}}</small><b [ngClass]="deltaTone(lastDayDiff(hero.id,stat.key))">{{displayDelta(lastDayDiff(hero.id,stat.key))}} <em>últ. jornada</em></b><b [ngClass]="deltaTone(seasonDiff(hero,stat.key))">{{displayDelta(seasonDiff(hero,stat.key))}} <em>temporada</em></b></div>}</div></div><div class="potential-summary">Variación máxima por jornada: PV {{hero.caps.health.min}} / +{{hero.caps.health.max}} · ATQ {{hero.caps.attack.min}} / +{{hero.caps.attack.max}} · DEF {{hero.caps.defense.min}} / +{{hero.caps.defense.max}} · VEL {{hero.caps.speed.min}} / +{{hero.caps.speed.max}}</div><div class="upgrade-preview">
+
+        <!-- Dos posiciones de vanguardia y tres de retaguardia, sin restringir clases. -->
+        <section class="panel formation-editor">
+          <div class="panel-head"><div><small class="eyebrow">ESTRATEGIA DE COMBATE</small><h2>Formación 2 + 3</h2></div><span class="tag">{{currentTeam.activeIds.length}} / 5</span></div>
+          <p class="market-hint">Los campeones delanteros reciben ataques con más frecuencia. Los de retaguardia tienen protección mientras sobrevive algún delantero, excepto contra Asesinos. Elige dos casillas ocupadas para intercambiarlas.</p>
+          <div class="battlefield">
+            <div class="battle-line"><small>▲ DELANTERA (2)</small><div class="battle-slots">
+              @for(i of [0,1];track i){<div class="battle-position front-position"><span class="position-index">{{i+1}}</span>@if(starters(selectedSide)[i];as h){<strong>{{heroIcon(h.className)}} {{h.name}}</strong><span>{{h.className}} · {{tacticOf(selectedSide,h.id)==='aggressive'?'Agresiva':tacticOf(selectedSide,h.id)==='defensive'?'Defensiva':'Equilibrada'}}</span>} @else {<span>Sin asignar</span>}</div>}
+            </div></div>
+            <div class="battle-line"><small>▼ RETAGUARDIA (3)</small><div class="battle-slots">
+              @for(i of [2,3,4];track i){<div class="battle-position back-position"><span class="position-index">{{i+1}}</span>@if(starters(selectedSide)[i];as h){<strong>{{heroIcon(h.className)}} {{h.name}}</strong><span>{{h.className}} · {{tacticOf(selectedSide,h.id)==='aggressive'?'Agresiva':tacticOf(selectedSide,h.id)==='defensive'?'Defensiva':'Equilibrada'}}</span>} @else {<span>Sin asignar</span>}</div>}
+            </div></div>
+          </div>
+          <div class="formation-tools">
+            <label>Desde <select [(ngModel)]="slotFrom[selectedSide]">@for(h of starters(selectedSide);track h.id;let i=$index){<option [ngValue]="i">{{i+1}} · {{h.name}}</option>}</select></label>
+            <label>Hacia <select [(ngModel)]="slotTo[selectedSide]">@for(h of starters(selectedSide);track h.id;let i=$index){<option [ngValue]="i">{{i+1}} · {{h.name}}</option>}</select></label>
+            <button class="btn btn-outline" [disabled]="!canRotateCurrent || slotFrom[selectedSide]===slotTo[selectedSide]" (click)="swapPositions(selectedSide)">⇄ Intercambiar posiciones</button>
+          </div>
+          @if(!canRotateCurrent||slotFrom[selectedSide]===slotTo[selectedSide]){<p class="button-hint">ⓘ {{!canRotateCurrent?'La jornada ya terminó; no puedes cambiar la formación.':'Selecciona dos casillas diferentes.'}}</p>}
+        </section>
+        <p class="market-hint">Solo puedes vender o aceptar un traspaso de un campeón <b>guardado en el almacén</b>, y siempre que conserves al menos <b>tres campeones en propiedad</b>. Mientras haya batallas en curso se bloquean las ventas y traspasos.</p><div class="roster-grid">
+          @for(hero of currentTeam.heroes;track hero.id){<article class="roster-card panel"><div class="roster-portrait" [ngClass]="heroClass(hero.className)"><span>{{heroIcon(hero.className)}}</span></div><div class="roster-description"><span class="tiny-class">{{hero.className}} · {{hero.tier}}</span><h3>{{hero.name}}</h3><div class="lineup-status"><span [class.active-champion]="heroActive(hero.id)">{{heroActive(hero.id)?'⚔ TITULAR':'◈ ALMACÉN'}}</span><span>☠ {{heroDeaths(selectedSide,hero.id)}} / 3 esta jornada</span></div><p>Tier {{hero.level+1}} / {{hero.maxLevel+1}} · Calidad mínima {{hero.minTier}} / Máxima {{hero.maxTier}}</p><p class="market-hint">{{hero.ability ? '★ '+(hero.abilityDescription||hero.ability) : 'Mejorable hasta '+hero.maxTier}}</p><div class="champion-stat-head"><span class="card-quality" [ngClass]="tierClass(hero.tier)">{{hero.tier}}</span><span>⚔ {{hero.stats.attack}} ATQ</span><span>⬡ {{hero.stats.defense}} DEF</span><span>♥ {{hero.stats.health}} PV</span><span>➶ {{hero.stats.speed}} VEL</span></div>
+                <details class="card-details"><summary>Estadísticas, evolución y vista previa de mejoras</summary><div class="stat-bars"><div><label>VIDA <b>{{hero.stats.health}}</b></label><div class="bar"><span [style.width.%]="hero.stats.health/230*100"></span></div></div><div><label>ATAQUE <b>{{hero.stats.attack}}</b></label><div class="bar"><span [style.width.%]="hero.stats.attack/70*100"></span></div></div><div><label>DEFENSA <b>{{hero.stats.defense}}</b></label><div class="bar"><span [style.width.%]="hero.stats.defense/70*100"></span></div></div><div><label>VELOCIDAD <b>{{hero.stats.speed}}</b></label><div class="bar"><span [style.width.%]="hero.stats.speed/70*100"></span></div></div></div><div class="roster-evolution"><div class="evolution-title">Evolución de estadísticas</div><div class="evolution-row">@for(stat of statFields;track stat.key){<div><small>{{stat.icon}} {{stat.label}}</small><b [ngClass]="deltaTone(lastDayDiff(hero.id,stat.key))">{{displayDelta(lastDayDiff(hero.id,stat.key))}} <em>últ. jornada</em></b><b [ngClass]="deltaTone(seasonDiff(hero,stat.key))">{{displayDelta(seasonDiff(hero,stat.key))}} <em>temporada</em></b></div>}</div></div><div class="potential-summary">Variación máxima por jornada: PV {{hero.caps.health.min}} / +{{hero.caps.health.max}} · ATQ {{hero.caps.attack.min}} / +{{hero.caps.attack.max}} · DEF {{hero.caps.defense.min}} / +{{hero.caps.defense.max}} · VEL {{hero.caps.speed.min}} / +{{hero.caps.speed.max}}</div><div class="upgrade-preview">
             @if(hero.tier!=='Mítico') {<span>Próximo tier: +{{upgradeStats(hero,'level').health}} PV, +{{upgradeStats(hero,'level').attack}} ATQ, +{{upgradeStats(hero,'level').defense}} DEF, +{{upgradeStats(hero,'level').speed}} VEL</span><span>Calidad superior: +{{upgradeStats(hero,'quality').health}} PV, +{{upgradeStats(hero,'quality').attack}} ATQ, +{{upgradeStats(hero,'quality').defense}} DEF, +{{upgradeStats(hero,'quality').speed}} VEL</span>} @else {<span>★ MÍTICO: estadísticas inmutables, sin mejoras ni penalizaciones por muerte.</span>}
-            </div><div class="roster-buttons"><button class="btn btn-primary btn-sm" [disabled]="!canEdit || hero.level>=hero.maxLevel || currentTeam.gold<upgradeCost(hero) || hero.tier==='Mítico'" (click)="upgrade(hero.id)">↑ Tier {{hero.level>=hero.maxLevel?'(MAX)':'('+upgradeCost(hero)+'◆)'}}</button><button class="btn btn-outline btn-sm" [disabled]="!canEdit || hero.tier==='Mítico' || currentTeam.gold<qualityCost(hero) || isQualityMax(hero)" (click)="raiseQuality(hero.id)">✦ Calidad {{isQualityMax(hero)?'(MAX)':'('+qualityCost(hero)+'◆)'}}</button><button class="btn btn-ghost btn-sm" [disabled]="hero.tier==='Mítico' || !canEdit || currentTeam.heroes.length<=3" (click)="sell(hero.id)">Vender +{{sellValue(hero)}}◆</button></div></div></article>}
+            </div></details><div class="tactic-picker"><label>Orden táctica · {{lineOf(selectedSide,hero.id)}}
+                  <select [ngModel]="tacticOf(selectedSide,hero.id)" (ngModelChange)="updateTactic(selectedSide,hero.id,$event)" [disabled]="!canRotateCurrent">
+                    @for(o of tacticalOrders;track o.value){<option [value]="o.value">{{o.label}} — {{o.description}}</option>}
+                  </select></label>
+                  @if(!canRotateCurrent){<span class="button-hint">ⓘ La jornada está cerrada: órdenes bloqueadas.</span>}
+                </div><div class="roster-buttons"><button class="btn btn-sm" [class.btn-primary]="!heroActive(hero.id)" [class.btn-outline]="heroActive(hero.id)" [disabled]="!!alignReason(hero)" [title]="alignReason(hero)" (click)="setActive(hero.id)">{{heroActive(hero.id)?'→ Almacén':'⚔ Alinear'}}</button><button class="btn btn-primary btn-sm" [disabled]="!!tierReason(hero)" [title]="tierReason(hero)" (click)="upgrade(hero.id)">↑ Tier {{hero.level>=hero.maxLevel?'(MAX)':'('+upgradeCost(hero)+'◆)'}}</button><button class="btn btn-outline btn-sm" [disabled]="!!qualityReason(hero)" [title]="qualityReason(hero)" (click)="raiseQuality(hero.id)">✦ Calidad {{isQualityMax(hero)?'(MAX)':'('+qualityCost(hero)+'◆)'}}</button><button class="btn btn-ghost btn-sm" [disabled]="!!sellReason(hero)" [title]="sellReason(hero)" (click)="sell(hero.id)">Vender +{{sellValue(hero)}}◆</button></div><div class="button-reasons">
+                @if(alignReason(hero)){<span>ⓘ Alineación: {{alignReason(hero)}}</span>}
+                @if(tierReason(hero)){<span>ⓘ Tier: {{tierReason(hero)}}</span>}
+                @if(qualityReason(hero)){<span>ⓘ Calidad: {{qualityReason(hero)}}</span>}
+                @if(sellReason(hero)){<span>ⓘ Venta: {{sellReason(hero)}}</span>}
+              </div></div></article>}
         </div>
       }
 
       @if(tab==='trades') {
         <div class="section-heading"><div><small class="eyebrow">MERCADO ENTRE PARTICIPANTES</small><h2>Solicitudes de compra</h2></div><span class="gold-balance">◆ {{currentTeam.gold}} ORO</span></div>
-        <div class="team-switch"><button [class.active]="selectedSide==='a'" (click)="chooseSide('a');tradeHeroId='';tradeAmount=0">⚔ Actuar como Equipo A</button><button [class.active]="selectedSide==='b'" [disabled]="state.mode==='bot'" (click)="chooseSide('b');tradeHeroId='';tradeAmount=0">◆ Actuar como Equipo B</button></div>
-        <p class="market-hint">Pide cualquier campeón que tenga el equipo contrario. La oferta mínima es lo que pagó su propietario para conseguirlo; los personajes del sorteo inicial toman el precio base de catálogo. Solo se traspasan equipos con 3–5 miembros y sin gastar más oro del disponible. En modo bot, la IA decide automáticamente.</p>
+        <div class="team-switch"><button [class.active]="selectedSide==='a'" (click)="chooseSide('a');tradeHeroId='';tradeAmount=0">⚔ Actuar como Equipo A</button><button [class.active]="selectedSide==='b'" [disabled]="state.mode==='bot'" title="En modo bot solo puedes gestionar tu propio equipo" (click)="chooseSide('b');tradeHeroId='';tradeAmount=0">◆ Actuar como Equipo B</button></div>
+        <p class="market-hint">Pide cualquier campeón que tenga el equipo contrario. La oferta mínima es lo que pagó su propietario para conseguirlo; los personajes del sorteo inicial toman el precio base de catálogo. Solo se traspasan equipos con al menos 3 miembros y sin gastar más oro del disponible. El vendedor debe mandar antes el campeón al almacén. Los traspasos se bloquean desde la primera batalla hasta cerrar la jornada. En modo bot, la IA decide automáticamente.</p>
         <section class="panel trade-panel">
           <div class="panel-head"><div><small class="eyebrow">SELECCIÓN DEL RIVAL</small><h2>Campeones de {{enemyTeam.name}}</h2></div><span class="tag">{{enemyTeam.heroes.length}} héroes</span></div>
           <div class="trade-targets">
@@ -133,7 +232,7 @@
               <button class="trade-target" [class.active]="tradeHeroId===hero.id" (click)="chooseTradeTarget(hero.id)">
                 <span class="hero-symbol" [ngClass]="heroClass(hero.className)">{{heroIcon(hero.className)}}</span>
                 <span class="trade-hero-name"><b>{{hero.name}}</b><small>{{hero.className}} · Nivel {{hero.level+1}} · {{hero.tier}}</small></span>
-                <span class="trade-min">Mín. ◆ {{minTradePrice(hero)}}</span>
+                <span class="trade-min">Mín. ◆ {{minTradePrice(hero)}} · {{enemyTeam.activeIds.includes(hero.id)?'⚔ Equipado':'◈ Almacén'}}</span>
               </button>
             }
           </div>
@@ -141,7 +240,7 @@
             <div class="trade-composer">
               <div><small class="eyebrow">TU PROPUESTA</small><h3>{{targetHero.name}}</h3><p>Precio mínimo: <b>{{minTradePrice(targetHero)}} oro</b>. Tiene {{targetHero.stats.health}} PV, {{targetHero.stats.attack}} ATQ, {{targetHero.stats.defense}} DEF, {{targetHero.stats.speed}} VEL.</p></div>
               <label>Oro ofrecido <input type="number" min="1" step="1" [min]="minTradePrice(targetHero)" [(ngModel)]="tradeAmount"></label>
-              <button class="btn btn-primary" [disabled]="!canEdit || currentTeam.heroes.length>=5 || enemyTeam.heroes.length<=3 || tradeAmount<minTradePrice(targetHero) || tradeAmount>currentTeam.gold" (click)="submitTrade()">⇄ Enviar oferta</button>
+              <button class="btn btn-primary" [disabled]="!!tradeReason()" [title]="tradeReason()" (click)="submitTrade()">⇄ Enviar oferta</button>@if(tradeReason()){<p class="button-hint">ⓘ {{tradeReason()}}</p>}
             </div>
           } @else {<div class="trade-empty-selection">Elige uno de los campeones rivales para proponer una compra.</div>}
         </section>
@@ -152,11 +251,11 @@
               <div class="trade-offer" [class.trade-pending]="o.status==='pending'">
                 <div><b>{{o.heroName}}</b><small>Jornada {{o.day}} · {{o.buyer==='a'?'Equipo A':'Equipo B'}} ofrece a {{o.seller==='a'?'Equipo A':'Equipo B'}}</small><strong>◆ {{o.amount}} oro</strong></div>
                 <div class="trade-offer-actions"><span class="trade-status" [class.trade-accepted]="o.status==='accepted'">{{statusLabel(o.status)}}</span>
-                  @if(o.status==='pending' && !state.result && o.seller===selectedSide && state.mode==='manual') {
-                    <button class="btn btn-primary btn-sm" (click)="replyTrade(o.id,true)">Aceptar</button>
+                  @if(o.status==='pending' && !state.result && boutsDone===0 && o.seller===selectedSide && state.mode==='manual') {
+                    <button class="btn btn-primary btn-sm" [disabled]="currentTeam.activeIds.includes(o.heroId) || currentTeam.heroes.length<=3" [title]="currentTeam.activeIds.includes(o.heroId)?'Desequipa este campeón en Plantillas antes de aceptar':'Conserva al menos tres personajes'" (click)="replyTrade(o.id,true)">Aceptar</button>
                     <button class="btn btn-ghost btn-sm" (click)="replyTrade(o.id,false)">Rechazar</button>
                   }
-                  @if(o.status==='pending' && !state.result && o.buyer===selectedSide) {
+                  @if(o.status==='pending' && !state.result && boutsDone===0 && o.buyer===selectedSide) {
                     <button class="btn btn-outline btn-sm" (click)="cancelTrade(o.id)">Cancelar</button>
                   }
                 </div>
@@ -176,7 +275,7 @@
             <div class="mythic-stats"><span>♥ {{legend.stats.health}} PV</span><span>⚔ {{legend.stats.attack}} ATQ</span><span>⬡ {{legend.stats.defense}} DEF</span><span>➶ {{legend.stats.speed}} VEL</span></div>
             <div class="market-hint">Precio de salida: <b>{{auc.minimum}} ◆</b> · Puja A: {{auc.bids.a}} ◆ · Puja B: {{auc.bids.b}} ◆ · Máxima: {{auctionTopBid}} ◆</div>
             @if(auc.status==='open') {
-              <div class="auction-actions"><label>Tu puja ({{selectedSide==='a'?'Equipo A':'Equipo B'}}) <input type="number" min="1" step="1" [(ngModel)]="auctionBid"></label><button class="btn btn-primary" [disabled]="!auctionBidValid || !canEdit" (click)="bidMythic()">♛ Pujar</button><button class="btn btn-outline" (click)="settleMythic()">Resolver subasta ahora</button></div>
+              <div class="auction-actions"><label>Tu puja ({{selectedSide==='a'?'Equipo A':'Equipo B'}}) <input type="number" min="1" step="1" [(ngModel)]="auctionBid"></label><button class="btn btn-primary" [disabled]="!auctionBidValid || !canEdit" [title]="bidReason()" (click)="bidMythic()">♛ Pujar</button>@if(bidReason()){<p class="button-hint">ⓘ {{bidReason()}}</p>}<button class="btn btn-outline" (click)="settleMythic()">Resolver subasta ahora</button></div>
               <p class="market-hint">La puja ganadora se cobra al resolver la subasta. Puedes resolverla antes de luchar; si no lo haces, se resuelve automáticamente al empezar el combate. Debes tener hueco libre.</p>
             } @else {<p>Resultado: {{auc.winner ? (auc.winner==='a'?'Equipo A':'Equipo B') : 'Sin ganador'}}.</p>}
           </section>
@@ -186,26 +285,55 @@
 
       @if(tab==='reports') {
         @if(state.result) {
-          <section class="report-score panel"><div><small class="eyebrow">JORNADA {{state.result.day}} · TEMPORADA {{state.season}}</small><h2>{{state.result.winner==='a'?'¡Victoria en la arena!':'El rival vence esta jornada'}}</h2><p>Las estadísticas se actualizan una única vez tras las cinco batallas. Oro: A +{{state.result.goldA}} ◆ · B +{{state.result.goldB}} ◆.</p><p>Equipo A: {{performanceTotals('a').kills}} kills · {{performanceTotals('a').deaths}} muertes · {{performanceTotals('a').saves}} defensas salvadoras. Equipo B: {{performanceTotals('b').kills}} kills · {{performanceTotals('b').deaths}} muertes · {{performanceTotals('b').saves}} defensas salvadoras.</p></div><div class="score-big"><strong>{{state.result.scoreA}} : {{state.result.scoreB}}</strong><small>EQUIPO A — EQUIPO B</small></div></section>
+          <section class="report-score panel"><div><small class="eyebrow">JORNADA {{state.result.day}} · TEMPORADA {{state.season}}</small><h2>{{state.result.winner==='a'?'¡Victoria en la arena!':'El rival vence esta jornada'}}</h2>@if(state.result.emergencyResetSides?.length){<p class="reset-highlight">✦ Reinicio de emergencia aplicado a: {{state.result.emergencyResetSides?.join(', ')}}. ¡Puntuación, victorias y jornada conservadas!</p>}<p>Estadísticas y eliminación (3 muertes) se resuelven tras las cinco batallas. Oro: A +{{state.result.goldA}} ◆ · B +{{state.result.goldB}} ◆.</p><p>Equipo A: {{performanceTotals('a').kills}} kills · {{performanceTotals('a').deaths}} muertes · {{performanceTotals('a').saves}} defensas salvadoras. Equipo B: {{performanceTotals('b').kills}} kills · {{performanceTotals('b').deaths}} muertes · {{performanceTotals('b').saves}} defensas salvadoras.</p></div><div class="score-big"><strong>{{state.result.scoreA}} : {{state.result.scoreB}}</strong><small>EQUIPO A — EQUIPO B</small></div></section>
           <div class="section-heading"><h2>Rondas de la batalla</h2><button class="btn btn-outline btn-sm" (click)="advance()">Siguiente jornada →</button></div>
           <div class="round-tabs">@for(bout of state.result.bouts;track bout.number;let i=$index){<button [class.active]="selectedBout===i" (click)="inspectBout(i)">Ronda {{i+1}} <span [class.won]="bout.winner==='a'">{{bout.winner==='a'?'✓':'✕'}}</span></button>}</div>
           <section class="battle-log panel"><div class="panel-head"><div><small class="eyebrow">CRÓNICA DEL COMBATE</small><h2>Ronda {{state.result.bouts[selectedBout].number}} <span class="dim">· {{state.result.bouts[selectedBout].turns}} turnos</span></h2></div><span class="tag" [class.tag-ready]="state.result.bouts[selectedBout].winner==='a'">{{state.result.bouts[selectedBout].winner==='a'?'VICTORIA':'DERROTA'}}</span></div>
             <div class="log-legend"><span class="legend-a">● Equipo A</span><span class="legend-b">● Equipo B</span><span class="legend-neutral">● Eventos</span></div>
-            <div class="log-lines">@for(line of state.result.bouts[selectedBout].log;track $index){<div class="log-line"><span class="log-index">{{($index+1).toString().padStart(2,'0')}}</span><span>@for(part of logParts(line,state.result.bouts[selectedBout].changes);track $index){<span [class.team-name-a]="part.side==='a'" [class.team-name-b]="part.side==='b'">{{part.text}}</span>}</span></div>}</div>
+            <div class="chronicle-tools"><button type="button" class="btn btn-outline btn-sm" [disabled]="!selectedReportBout?.timeline?.length" (click)="replaySelectedBout()">▶ Volver a ver batalla</button><span class="button-hint">Turnos desplegables; los guardados antiguos pueden carecer de secuencia.</span></div>
+            @if(selectedReportBout?.timeline?.length){
+              <div class="turn-chronicle">
+                @for(turn of selectedReportBout!.timeline!;track turn.number){
+                  <details class="turn-entry" [open]="turn.number===1">
+                    <summary><span>Turno {{turn.number}} / {{selectedReportBout!.turns}}</span><span>{{turn.events.length}} acciones</span></summary>
+                    <div class="log-lines">@for(line of turn.events;track $index){<div class="log-line"><span class="log-index">{{($index+1).toString().padStart(2,'0')}}</span><span>@for(part of logParts(line,selectedReportBout!.changes);track $index){<span [class.team-name-a]="part.side==='a'" [class.team-name-b]="part.side==='b'">{{part.text}}</span>}</span></div>}</div>
+                  </details>
+                }
+              </div>
+              <p class="battle-ending">🏁 {{selectedReportBout!.log[selectedReportBout!.log.length-1]}}</p>
+            } @else {<div class="log-lines">@for(line of state.result.bouts[selectedBout].log;track $index){<div class="log-line"><span class="log-index">{{($index+1).toString().padStart(2,'0')}}</span><span>@for(part of logParts(line,state.result.bouts[selectedBout].changes);track $index){<span [class.team-name-a]="part.side==='a'" [class.team-name-b]="part.side==='b'">{{part.text}}</span>}</span></div>}</div> }
             <div class="stat-deltas"><h3>Variación al terminar las CINCO batallas de la jornada</h3><p class="market-hint">Las 5 batallas acumulan kills, muertes y defensas salvadoras antes de calcular la variación. También verás las diferencias acumuladas en las fichas de Plantillas.</p>
-              @for(side of ['a','b'];track side){<div class="delta-team" [class.delta-team-a]="side==='a'" [class.delta-team-b]="side==='b'"><h4>{{side==='a'?'⚔ Equipo A — Tus combatientes':'◆ Equipo B — Rival'}}</h4>
+              @for(side of sides;track side){<div class="delta-team" [class.delta-team-a]="side==='a'" [class.delta-team-b]="side==='b'"><h4>{{side==='a'?'⚔ Equipo A — Tus combatientes':'◆ Equipo B — Rival'}}</h4>
                 <div class="deltas-grid">
                   @for(change of reportChanges(side==='a'?'a':'b');track change.id){<article class="delta-hero-card"><div class="delta-card-head"><span class="delta-card-symbol" [ngClass]="heroClass(change.className || state.seasonHeroes[change.id].className)">{{heroIcon(change.className || state.seasonHeroes[change.id].className)}}</span><div><strong>{{change.name}}</strong><small>{{change.className || state.seasonHeroes[change.id].className}} · {{change.tier || state.seasonHeroes[change.id].tier}}</small></div></div>
                     <div class="delta-stat-table">
                       @for(stat of statFields;track stat.key){<div class="delta-stat-row"><span>{{stat.icon}} {{stat.label}}</span><span class="stat-numbers">{{getStats(change,'before',stat.key) ?? '—'}} → <b>{{getStats(change,'after',stat.key) ?? '—'}}</b></span><span class="delta-value" [ngClass]="deltaTone(change[stat.key]??0)">{{displayDelta(change[stat.key]??0)}}</span></div>}
-                    </div><div class="delta-performance"><span>⚔ {{change.damage??'—'}} daño</span><span>✚ {{change.healed??'—'}} curación</span><span>☠ {{change.kills??'—'}} bajas</span><span>✝ {{change.deaths??0}} muertes</span><span>🛡 {{change.saves??0}} salvadas</span><span>⬡ {{change.damageTaken??'—'}} recibido</span></div>
+                    </div><div class="delta-performance"><span>Participaciones: {{change.participations ?? '—'}} / 5</span>@if(change.eliminated){<span class="loss-warning">☠ ELIMINADO · 3 muertes</span>}<span>⚔ {{change.damage??'—'}} daño</span><span>✚ {{change.healed??'—'}} curación</span><span>☠ {{change.kills??'—'}} bajas</span><span>✝ {{change.deaths??0}} muertes</span><span>🛡 {{change.saves??0}} salvadas</span><span>⬡ {{change.damageTaken??'—'}} recibido</span></div>
                   </article>}
                 </div>
               </div>}
             </div>
           </section>
-        } @else {<section class="empty-box panel"><span class="empty-illustration">⚔</span><h2>Todavía no hay combates</h2><p>Ve a la Arena, elige tu bendición y simula la primera jornada.</p><button class="btn btn-primary" (click)="changeTab('arena')">Preparar batalla →</button></section>}
-        <section class="panel league-table"><div class="panel-head"><div><small class="eyebrow">PROGRESO DE TEMPORADA</small><h2>Clasificación</h2></div><span class="tag">{{state.history.length}} jornadas · {{state.durationDays}} días por temporada</span></div><div class="league-row"><strong>01</strong><span>⚔ Tu equipo</span><b>{{state.scoreA}} pts</b><small>{{state.winsA}} victorias</small></div><div class="league-row"><strong>02</strong><span>◆ Equipo rival</span><b>{{state.scoreB}} pts</b><small>{{state.winsB}} victorias</small></div>
+        } @else if(boutsDone>0) {
+          <section class="panel"><div class="panel-head"><div><small class="eyebrow">JORNADA EN CURSO</small><h2>{{boutsDone}} de 5 batallas disputadas</h2></div><button class="btn btn-primary" (click)="changeTab('arena')">Volver a la arena →</button></div><p class="market-hint">Las estadísticas y los premios todavía no se han aplicado. Puedes hacer sustituciones en la Arena entre batallas.</p></section>
+          <div class="round-tabs">@for(bout of state.currentBouts;track bout.number;let i=$index){<button [class.active]="selectedBout===i" (click)="inspectBout(i)">Batalla {{i+1}} <span [class.won]="bout.winner==='a'">{{bout.winner==='a'?'✓':'✕'}}</span></button>}</div>
+          <section class="battle-log panel"><h3>Crónica · Batalla {{state.currentBouts[selectedBout].number}}</h3><div class="log-legend"><span class="legend-a">● Equipo A</span><span class="legend-b">● Equipo B</span></div><div class="chronicle-tools"><button type="button" class="btn btn-outline btn-sm" [disabled]="!selectedReportBout?.timeline?.length" (click)="replaySelectedBout()">▶ Volver a ver batalla</button><span class="button-hint">Turnos desplegables; los guardados antiguos pueden carecer de secuencia.</span></div>
+            @if(selectedReportBout?.timeline?.length){
+              <div class="turn-chronicle">
+                @for(turn of selectedReportBout!.timeline!;track turn.number){
+                  <details class="turn-entry" [open]="turn.number===1">
+                    <summary><span>Turno {{turn.number}} / {{selectedReportBout!.turns}}</span><span>{{turn.events.length}} acciones</span></summary>
+                    <div class="log-lines">@for(line of turn.events;track $index){<div class="log-line"><span class="log-index">{{($index+1).toString().padStart(2,'0')}}</span><span>@for(part of logParts(line,selectedReportBout!.changes);track $index){<span [class.team-name-a]="part.side==='a'" [class.team-name-b]="part.side==='b'">{{part.text}}</span>}</span></div>}</div>
+                  </details>
+                }
+              </div>
+              <p class="battle-ending">🏁 {{selectedReportBout!.log[selectedReportBout!.log.length-1]}}</p>
+            } @else {<div class="log-lines">@for(line of state.currentBouts[selectedBout].log;track $index){<div class="log-line"><span class="log-index">{{($index+1).toString().padStart(2,'0')}}</span><span>@for(part of logParts(line,state.currentBouts[selectedBout].changes);track $index){<span [class.team-name-a]="part.side==='a'" [class.team-name-b]="part.side==='b'">{{part.text}}</span>}</span></div>}</div> }
+          <div class="delta-team"><h4>Muertes acumuladas (A)</h4><div class="lineup-tags">@for(h of state.teamA.heroes;track h.id){<span class="lineup-tag">{{h.name}}: ☠ {{heroDeaths('a',h.id)}} / 3</span>}</div></div>
+          <div class="delta-team delta-team-b"><h4>Muertes acumuladas (B)</h4><div class="lineup-tags">@for(h of state.teamB.heroes;track h.id){<span class="lineup-tag">{{h.name}}: ☠ {{heroDeaths('b',h.id)}} / 3</span>}</div></div></section>
+        } @else {<section class="empty-box panel"><span class="empty-illustration">⚔</span><h2>Todavía no hay combates</h2><p>Ve a la Arena, elige tus bendiciones y simula la primera batalla.</p><button class="btn btn-primary" (click)="changeTab('arena')">Preparar batalla →</button></section>}
+
+        <section class="panel league-table"><div class="panel-head"><div><small class="eyebrow">PROGRESO DE TEMPORADA</small><h2>Clasificación</h2></div><span class="tag">{{state.history.length}} jornadas · {{state.durationDays}} jornadas por temporada</span></div><div class="league-row"><strong>01</strong><span>⚔ Tu equipo</span><b>{{state.scoreA}} pts</b><small>{{state.winsA}} victorias</small></div><div class="league-row"><strong>02</strong><span>◆ Equipo rival</span><b>{{state.scoreB}} pts</b><small>{{state.winsB}} victorias</small></div>
           @if(state.records.length){<h3>Temporadas terminadas</h3>@for(record of state.records;track record.season){<div class="record-row">Temporada {{record.season}} · {{record.daysPlayed}} jornadas <strong>{{record.scoreA}} - {{record.scoreB}} pts</strong></div>}}
         </section>
       }
@@ -217,9 +345,63 @@
         <section class="panel batch-panel"><div><small class="eyebrow">PRUEBA DE EQUILIBRIO</small><h2>100 simulaciones rápidas</h2><p>Repite los equipos actuales 100 veces variando el azar. No cambia las monedas, las estadísticas ni la clasificación.</p></div><button class="btn btn-primary" (click)="runBatch()">✦ Ejecutar test</button>
           @if(batchMessage){<div class="batch-result">{{batchMessage}}</div>}
         </section>
-        <section class="panel"><div class="panel-head"><div><small class="eyebrow">SUBASTA DE PRUEBA</small><h2>Invocar un Mítico en local</h2></div></div><p class="market-hint">Herramienta exclusiva del prototipo. Fuerza una subasta de la reserva global para comprobar pujas y habilidades especiales.</p><button class="btn btn-outline" [disabled]="!!auction || !!state.result" (click)="debugMythic();changeTab('auction')">♛ Generar subasta Mítica</button></section>
+        <section class="panel"><div class="panel-head"><div><small class="eyebrow">SUBASTA DE PRUEBA</small><h2>Invocar un Mítico en local</h2></div></div><p class="market-hint">Herramienta exclusiva del prototipo. Fuerza una subasta de la reserva global para comprobar pujas y habilidades especiales.</p><button class="btn btn-outline" [disabled]="!!auction || !!state.result || boutsDone>0" title="Solo puedes generar una subasta antes del primer combate si aún no existe otra" (click)="debugMythic();changeTab('auction')">♛ Generar subasta Mítica</button>@if(!!auction || !!state.result || boutsDone>0){<p class="button-hint">ⓘ Solo puedes crear una subasta si no hay otra y aún no has empezado a combatir.</p>}</section>
         <section class="panel"><div class="panel-head"><div><small class="eyebrow">RECOMPENSAS</small><h2>Oro al cerrar la jornada</h2></div></div><p class="market-hint">Victoria +{{rewards.winner}} ◆ · Derrota +{{rewards.loser}} ◆ · Por kill +{{rewards.kill}} ◆ · Por defensa salvadora +{{rewards.save}} ◆. El bonus fijo antiguo de 30 ◆ por jornada se ha eliminado.</p></section>
         <section class="panel"><div class="panel-head"><div><small class="eyebrow">REPRODUCIBILIDAD</small><h2>Semilla actual: {{state.seed}}</h2></div><span class="tag">RNG DETERMINISTA</span></div><p class="panel-description">Si creas una partida nueva con esta semilla y repites las mismas decisiones, se repetirán los sorteos y los combates. Ideal para encontrar fallos.</p></section>
+      }
+      } <!-- fin de la zona jugable: cerrada durante el podio -->
+
+      @if(playback;as movie){
+        <div class="combat-replay-backdrop" role="presentation">
+          <section class="combat-replay" role="dialog" aria-modal="true" aria-label="Reproducción del combate">
+            <header class="replay-header">
+              <div><small class="eyebrow">FANTASY ARENA · COMBATE ANIMADO</small><h2>Batalla {{movie.bout.number}} de 5</h2><p>Las cinco batallas no avanzan automáticamente. Puedes gestionar tu equipo cuando cierres esta reproducción.</p></div>
+              <span class="replay-status">{{movie.playing?'● En directo':playbackFinished?'✓ Terminado':'Ⅱ Pausado'}}</span>
+            </header>
+            <div class="replay-timeline-head">
+              <strong>{{playbackTurnNumber===0?'Preparando batalla':'Turno '+playbackTurnNumber+' / '+playbackTotalTurns}}</strong>
+              <span>{{playbackFinished?'Resultado listo':'Máximo 25 turnos por batalla'}}</span>
+            </div>
+            <div class="replay-progress" role="progressbar" [attr.aria-valuenow]="playbackTurnNumber" [attr.aria-valuemax]="playbackTotalTurns" aria-valuemin="0"><span [style.width.%]="playbackTotalTurns?100*playbackTurnNumber/playbackTotalTurns:0"></span></div>
+            <div class="replay-field">
+              @for(side of sides;track side){
+                <div class="replay-team" [class.replay-team-b]="side==='b'">
+                  <h3>{{side==='a'?'🔵 Equipo A':'🔴 Equipo B'}}</h3>
+                  @for(fighter of playbackSideFighters(side);track fighter.id){
+                    <div class="replay-fighter" [class.replay-defeated]="fighter.hp<=0">
+                      <div class="replay-fighter-name"><strong>{{fighter.name}}</strong><span>{{fighter.hp}} / {{fighter.maxHp}} PV</span></div>
+                      <div class="replay-hp"><span [style.width.%]="hpPercent(fighter)"></span></div>
+                      @if(fighter.shield>0){<small>🛡 Escudo: {{fighter.shield}}</small>}
+                      @if(fighter.hp<=0){<small class="loss-warning">☠ Derrotado en esta batalla</small>}
+                    </div>
+                  }
+                </div>
+              }
+            </div>
+            <div class="replay-action-log" aria-live="off">
+              @if(playbackTurnNumber===0){<p>⚑ Comienza la batalla. Las posiciones, tácticas y estadísticas ya están preparadas.</p>}
+              @for(line of playbackEvents;track $index){
+                <p class="replay-action">@for(part of logParts(line,movie.bout.changes);track $index){<span [class.team-name-a]="part.side==='a'" [class.team-name-b]="part.side==='b'">{{part.text}}</span>}</p>
+              }
+              @if(playbackFinished){
+                <div class="replay-winner"><strong>🏁 Victoria del {{movie.bout.winner==='a'?'Equipo A':'Equipo B'}}</strong><span>Vida media restante: A {{movie.bout.remainingA}} % · B {{movie.bout.remainingB}} %</span></div>
+              }
+            </div>
+            <div class="replay-controls">
+              <div class="replay-speeds"><span>Velocidad</span>
+                @for(speed of [1,2,4];track speed){<button type="button" class="btn btn-sm" [class.btn-primary]="playbackSpeed===speed" [class.btn-outline]="playbackSpeed!==speed" (click)="setPlaybackSpeed(speed)">×{{speed}}</button>}
+              </div>
+              <div class="replay-actions">
+                @if(movie.playing){<button class="btn btn-outline" (click)="pausePlayback()">Ⅱ Pausar</button>}
+                @else if(!playbackFinished){<button class="btn btn-primary" (click)="resumePlayback()">▶ Continuar</button>}
+                <button class="btn btn-outline" [disabled]="playbackFinished" (click)="pausePlayback();advancePlayback()">⏭ Turno</button>
+                <button class="btn btn-outline" [disabled]="playbackFinished" (click)="skipPlayback()">Saltar al final</button>
+                @if(playbackFinished){<button class="btn btn-primary" (click)="closePlayback()">✓ Cerrar y continuar</button>}
+              </div>
+            </div>
+            <p class="replay-footnote">La simulación se calcula una sola vez y se reproduce sin alterar los resultados. Las estadísticas permanentes solo cambian al cerrar la quinta batalla.</p>
+          </section>
+        </div>
       }
       <footer class="app-footer">FANTASY ARENA <span>✦</span> PROTOTIPO LOCAL · ANGULAR + TYPESCRIPT <span class="footer-right">Diseñado para partidas privadas y simulación PvP</span></footer>
     </div>

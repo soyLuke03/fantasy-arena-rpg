@@ -92,3 +92,122 @@
 .auction-actions {display:flex;flex-wrap:wrap;align-items:end;gap:12px;margin:15px 0}
 .auction-actions label {font-size:.85rem;display:grid;gap:6px}
 .auction-actions input {max-width:160px}
+
+/* v0.7.0 — Jornada por etapas y rotaciones con almacén */
+.daily-panel,.midbattle-panel{margin:18px 0}
+.daily-team+.daily-team,.tactical-team+.tactical-team{border-top:1px solid #363447;padding-top:16px;margin-top:15px}
+.daily-team>strong,.tactical-team>h3{display:block;font-size:13px;color:#e8d9fb;margin-bottom:12px}
+.daily-blessings{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}
+.daily-blessings .blessing-item{padding:10px;min-width:0}
+.battle-pips{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:7px;margin:9px 0 18px}
+.battle-pips>div{padding:11px;border:1px solid #494053;text-align:center;background:#202132;color:#bbb5c9;font-weight:bold;border-radius:9px}
+.battle-pips>div.finished{background:#1f513d;border-color:#68c997;color:#c6ffdf}
+.battle-pips>div.next{background:#443459;border-color:#b094eb;color:#fff}
+.lineup-tags{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:10px}
+.lineup-tag{display:inline-flex;gap:8px;align-items:center;font-size:11px;border:1px solid #49445e;border-radius:8px;padding:9px;background:#242539}
+.lineup-tag b{color:#ccb59d;white-space:nowrap}.lineup-tag b.critical-death{color:#ff9292}
+.rotation-controls{display:flex;flex-wrap:wrap;align-items:end;gap:9px}
+.rotation-controls label{display:grid;gap:5px;flex:1;min-width:150px;color:#bcb2ce;font-size:11px}
+.rotation-controls select{max-width:100%;width:100%;color:#f2effa;background:#29273d;border:1px solid #545071;border-radius:9px;padding:9px}
+.lineup-status{display:flex;flex-wrap:wrap;gap:9px;margin:6px 0 12px;font-size:11px;color:#dfb7b7}
+.lineup-status>span:first-child{color:#9a9dab;border:1px solid #47435e;padding:4px 7px;border-radius:6px}
+.lineup-status>span.active-champion{color:#7fdfad;border-color:#53866b}
+.loss-warning{color:#ff9d99!important;font-weight:bold}
+@media(max-width:750px){.daily-blessings{grid-template-columns:1fr}.rotation-controls{flex-direction:column;align-items:stretch}.rotation-controls label{min-width:0}}
+
+/* v0.8.0 — reinicio de emergencia, siempre legible en móvil */
+.emergency-notice{display:flex;flex-direction:column;gap:8px;padding:16px 20px;border:1px solid rgba(232,185,82,.55);background:rgba(232,185,82,.10);margin-bottom:16px}
+.emergency-notice strong,.reset-highlight{color:#dba83f;font-weight:800}
+.emergency-notice span{line-height:1.55}
+
+/* ============================================================================
+   v0.9.0 · DISEÑO CLARO DE CAMPEONES Y ESTRATEGIA
+   El CSS se apoya en las clases originales y no cambia las reglas del motor.
+   ============================================================================ */
+:host { --bg:#0e101a; --panel:#191d2a; --line:#394056; }
+.market-hero,.roster-card { transition: border-color .18s,transform .18s,box-shadow .18s; overflow:hidden; }
+.market-hero:hover,.roster-card:hover { border-color:#766991;transform:translateY(-2px);box-shadow:0 12px 32px #0003; }
+.market-content h3,.roster-description h3 { font-size:clamp(17px,1.5vw,22px); line-height:1.2; margin:9px 0 12px; letter-spacing:-.35px; }
+.market-tags,.lineup-status {display:flex;gap:7px;align-items:center;flex-wrap:wrap;}
+.market-grid .stats-line {display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:5px;}
+.market-grid .stats-line span {background:#111827;border:1px solid #374151;padding:8px 5px;border-radius:9px;font-weight:800;text-align:center;color:#e9ebf7;}
+.champion-stat-head {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;margin:13px 0;}
+.champion-stat-head span {border:1px solid #424257;background:#222639;color:#e4e9f5;padding:9px 10px;border-radius:9px;font-weight:700;font-size:11px;white-space:nowrap;}
+.champion-stat-head .card-quality{grid-column:1/-1;width:fit-content;border-color:#634a83;color:#f0d9ff;}
+.champion-stat-head .card-quality.tier-rare{color:#8bc2ff;border-color:#4671ad}
+.champion-stat-head .card-quality.tier-epic{color:#dec0ff;border-color:#9464cb}
+.champion-stat-head .card-quality.tier-legend{color:#ffe0a2;border-color:#a98b44}
+.champion-stat-head .card-quality.tier-mythic{color:#ffafb6;border-color:#bf515a}
+.card-details{margin:12px 0;background:#131928;border:1px solid #42405c;border-radius:12px;padding:10px 13px;}
+.card-details summary{cursor:pointer;color:#d4b7ff;font-size:12px;font-weight:800;padding:4px;list-style-position:inside;}
+.card-details summary:focus-visible,.btn:focus-visible,.formation-tools select:focus-visible{outline:2px solid #d9c2ff;outline-offset:3px;}
+.card-details[open]{border-color:#7c67a2;background:#1b1b2f;}
+.card-details[open] summary{margin-bottom:12px;padding-bottom:12px;border-bottom:1px solid #3e3858;}
+.card-details .stat-bars{margin:8px 0;}
+.tactic-picker{margin:12px 0;padding:12px;background:#202a35;border:1px solid #3c4c5d;border-radius:12px;}
+.tactic-picker label {font-weight:800;color:#d5e8f6;font-size:12px;display:grid;gap:7px;}
+.tactic-picker select,.formation-tools select {max-width:100%;width:100%;background:#111c29;color:#f8f8ff;border:1px solid #62728a;border-radius:8px;padding:10px 9px;font-size:12px;min-height:40px;}
+.tactic-picker select:disabled{opacity:.65;}
+.button-reasons{display:grid;gap:5px;background:#232032;border-radius:9px;padding:10px;margin-top:12px;}
+.button-reasons:empty{display:none;}
+.button-reasons span,.button-hint{font-size:11px;line-height:1.55;color:#e5cda7;}
+.button-hint{margin:8px 0 0;background:#282230;padding:8px 12px;border-left:3px solid #dbb878;border-radius:4px;}
+button:disabled{cursor:not-allowed;opacity:.58;}
+/* Ficha de combate en retaguardia, con cobertura mientras exista un delantero. */
+.battlefield{display:grid;gap:15px;margin:20px 0;}
+.battle-line{border:1px solid #3b4658;background:#111827;border-radius:14px;padding:14px;}
+.battle-line>small{display:block;color:#b5c7e6;font-weight:800;letter-spacing:1.3px;margin-bottom:11px;}
+.battle-slots{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;}
+.battle-position{min-height:113px;min-width:140px;flex:1 1 145px;max-width:260px;padding:12px;border-radius:11px;display:flex;flex-direction:column;justify-content:center;gap:7px;}
+.battle-position strong{color:#fff;font-size:13px;overflow-wrap:anywhere;}
+.battle-position>span:not(.position-index){font-size:10px;color:#b4c0d3;}
+.battle-position .position-index{font-size:10px;font-weight:800;letter-spacing:.8px;color:#c6def2;}
+.front-position{background:linear-gradient(145deg,#332935,#222537);border:1px solid #806077;}
+.back-position{background:linear-gradient(145deg,#24334e,#1d2539);border:1px solid #526b96;}
+.formation-tools{display:flex;flex-wrap:wrap;align-items:end;gap:12px;}
+.formation-tools label{display:grid;gap:5px;flex:1 1 155px;color:#c0c8e0;font-size:12px;}
+.formation-tools button{min-height:42px;}
+.formation-mini-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px;}
+.formation-mini-grid>div{padding:13px;border:1px solid #3a4152;border-radius:11px;background:#161e2b;}
+.formation-mini-grid>div>b{display:block;margin-bottom:12px;color:#e7dcff;}
+.mini-lineup{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:7px;}
+.mini-position{display:flex;flex-direction:column;gap:5px;min-height:90px;padding:9px;background:#1c3042;border:1px solid #395d80;border-radius:8px;}
+.mini-position.is-front{background:#382936;border-color:#8b6178;}
+.mini-position small{color:#aec5dc;font-size:10px;}
+.mini-position strong{color:#fff;font-size:11px;overflow-wrap:anywhere;}
+.mini-position span{color:#c5bdcf;font-size:10px;}
+/* Podio persistente: la navegación normal solo reaparece al comenzar nueva temporada. */
+.season-finale{padding:clamp(22px,5vw,55px);text-align:center;border-color:#987546;background:radial-gradient(circle at 50% 5%,#4c382c,transparent 60%),#1b1a24;}
+.season-finale .finale-crown{font-size:74px;color:#f2cd75;text-shadow:0 0 35px #e1b25170;}
+.season-finale h2{font-size:clamp(28px,4vw,48px);letter-spacing:-1.5px;margin:8px auto 13px;}
+.season-finale>p{max-width:660px;margin:14px auto 26px;line-height:1.65;color:#c4bdce;}
+.season-finale h3{font:800 clamp(22px,3vw,30px) 'Space Grotesk',sans-serif;color:#f6ce86;margin:30px 0 18px;}
+.finale-results{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px;text-align:left;}
+.finale-results>div{border:1px solid #4d4252;border-radius:14px;background:#242536;padding:20px;display:grid;gap:10px;}
+.finale-results .finale-first{border-color:#c89e50;background:#3a3029;}
+.finale-results span{font-size:13px;font-weight:800;}
+.finale-results strong{font-size:24px;color:#faf3e7;}
+.finale-results small{color:#b8bacb;}
+.finale-mvp{display:grid;gap:7px;border:1px solid #574668;border-radius:14px;padding:20px;margin:20px 0;background:#252139;}
+.finale-mvp small{font-size:10px;letter-spacing:1.5px;color:#c5a7fa;font-weight:bold;}
+.finale-mvp strong{font-size:20px;color:#f5efff;}
+.finale-mvp span{color:#bdafc9;font-size:12px;}
+.finale-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-top:20px;}
+.finale-actions button{min-height:44px;}
+@media(max-width:760px){.formation-mini-grid{grid-template-columns:1fr;}.battle-position{min-width:105px;flex:1 1 115px}.finale-results{grid-template-columns:1fr}.season-finale{padding:24px 16px}.market-grid .stats-line{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+
+/* ============================================================================
+   v0.10.0 · REPRODUCCIÓN DE BATALLAS Y CRÓNICAS POR TURNO
+   La simulación no se ralentiza en el motor: se visualiza el historial calculado.
+   ============================================================================ */
+.combat-replay-backdrop{position:fixed;z-index:150;inset:0;background:rgba(6,8,17,.91);display:grid;place-items:center;padding:18px;backdrop-filter:blur(7px)}
+.combat-replay{width:min(100%,1080px);max-height:calc(100vh - 36px);overflow:auto;overscroll-behavior:contain;background:linear-gradient(150deg,#242236,#161c2d);border:1px solid #71628d;box-shadow:0 30px 100px #000b;border-radius:18px;padding:clamp(15px,2.4vw,28px);color:#eeeaf7}
+.replay-header{display:flex;align-items:start;justify-content:space-between;gap:15px;margin-bottom:20px}.replay-header h2{font:800 clamp(24px,3vw,32px) 'Space Grotesk',sans-serif;margin:8px 0}.replay-header p{font-size:12px;color:#b1adcb;line-height:1.55;margin:0;max-width:660px}.replay-status{white-space:nowrap;font-size:11px;color:#b1e7ce;background:#1e3a32;border:1px solid #44846d;border-radius:20px;padding:9px}
+.replay-timeline-head{display:flex;justify-content:space-between;gap:10px;color:#e6ddf5;align-items:center;font-size:12px}.replay-timeline-head span{color:#a5a2ba;font-size:11px}.replay-progress{background:#343348;height:8px;overflow:hidden;border-radius:9px;margin:10px 0 18px}.replay-progress span{display:block;height:100%;background:linear-gradient(90deg,#8970df,#71caa4);transition:width .3s ease}
+.replay-field{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.replay-team{background:#17293b;border:1px solid #416182;padding:13px;border-radius:12px;display:grid;align-content:start;gap:7px}.replay-team-b{background:#311d30;border-color:#82516b}.replay-team h3{font-size:14px;color:#a1d4ff;margin:0 0 9px}.replay-team-b h3{color:#ffb4c1}.replay-fighter{border:1px solid #ffffff20;border-radius:8px;background:#ffffff08;padding:8px 10px;display:grid;gap:6px}.replay-fighter-name{display:flex;justify-content:space-between;gap:9px;font-size:11px;overflow-wrap:anywhere}.replay-fighter-name span{white-space:nowrap;color:#bdc8df}.replay-fighter small{font-size:10px;color:#d9d0f4}.replay-hp{height:7px;border-radius:8px;background:#121321;overflow:hidden}.replay-hp span{display:block;height:100%;background:linear-gradient(90deg,#42ba79,#8ee3b7);transition:width .38s ease}.replay-fighter.replay-defeated{opacity:.58}.replay-fighter.replay-defeated .replay-hp span{background:#ad5365}
+.replay-action-log{background:#101724;border:1px solid #46516a;border-radius:11px;padding:13px 17px;min-height:110px;max-height:190px;overflow-y:auto;margin:16px 0;color:#d8dbec;font-size:12px;line-height:1.55}.replay-action{margin:6px 0;padding-bottom:5px;border-bottom:1px solid #ffffff12}.replay-action-log>p{margin-top:4px}.replay-winner{display:grid;gap:4px;margin-top:9px;padding:10px;border:1px solid #54785a;background:#1b3427;border-radius:8px}.replay-winner strong{color:#d7ffd9}.replay-winner span{color:#aad8bb}
+.replay-controls{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;align-items:center}.replay-speeds,.replay-actions{display:flex;align-items:center;gap:6px;flex-wrap:wrap}.replay-speeds>span{font-size:11px;margin-right:8px;color:#b6b3c8}.replay-footnote{font-size:10px;color:#a39eb5;line-height:1.4;margin:16px 0 0}
+.chronicle-tools{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin:12px 0}.chronicle-tools .button-hint{margin:0}.turn-chronicle{display:grid;gap:8px;max-height:520px;overflow-y:auto}.turn-entry{background:#171e2d;border:1px solid #43445d;border-radius:10px;overflow:hidden}.turn-entry summary{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:13px;color:#e9d8ff;font-size:12px;font-weight:800;cursor:pointer}.turn-entry summary span:last-child{font-size:10px;color:#a6b4cb}.turn-entry[open]{border-color:#705b96}.turn-entry .log-lines{padding:0 12px 10px;max-height:none}.battle-ending{border-left:3px solid #7fbc8b;background:#1c2f28;padding:12px;color:#cfefdb;font-size:12px;margin-top:12px}
+@media(max-width:660px){.combat-replay-backdrop{padding:7px}.combat-replay{max-height:calc(100vh - 14px);padding:14px}.replay-field{gap:7px}.replay-team{padding:7px}.replay-fighter-name{flex-direction:column;gap:3px}.replay-header{flex-wrap:wrap}.replay-controls,.replay-actions{align-items:stretch}.replay-controls button{flex:1}}
+@media(prefers-reduced-motion:reduce){.replay-progress span,.replay-hp span{transition:none}}
