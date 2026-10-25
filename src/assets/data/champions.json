@@ -1,0 +1,4298 @@
+[
+  {
+    "id": "0-0",
+    "name": "Elyra, la Astral",
+    "className": "Mago",
+    "tier": "Común",
+    "minTier": "Común",
+    "maxTier": "Legendario",
+    "maxLevel": 3,
+    "price": 26,
+    "stats": {
+      "health": 88,
+      "attack": 29,
+      "defense": 10,
+      "speed": 18
+    },
+    "caps": {
+      "health": {
+        "min": -9,
+        "max": 11
+      },
+      "attack": {
+        "min": -4,
+        "max": 7
+      },
+      "defense": {
+        "min": -3,
+        "max": 4
+      },
+      "speed": {
+        "min": -2,
+        "max": 4
+      }
+    }
+  },
+  {
+    "id": "0-1",
+    "name": "Varyn del Eclipse",
+    "className": "Mago",
+    "tier": "Común",
+    "minTier": "Común",
+    "maxTier": "Legendario",
+    "maxLevel": 4,
+    "price": 28,
+    "stats": {
+      "health": 94,
+      "attack": 30,
+      "defense": 11,
+      "speed": 19
+    },
+    "caps": {
+      "health": {
+        "min": -9,
+        "max": 10
+      },
+      "attack": {
+        "min": -4,
+        "max": 6
+      },
+      "defense": {
+        "min": -3,
+        "max": 3
+      },
+      "speed": {
+        "min": -2,
+        "max": 3
+      }
+    }
+  },
+  {
+    "id": "0-2",
+    "name": "Nyx, Tejedora Rúnica",
+    "className": "Mago",
+    "tier": "Raro",
+    "minTier": "Raro",
+    "maxTier": "Legendario",
+    "maxLevel": 5,
+    "price": 47,
+    "stats": {
+      "health": 106,
+      "attack": 33,
+      "defense": 12,
+      "speed": 20
+    },
+    "caps": {
+      "health": {
+        "min": -9,
+        "max": 10
+      },
+      "attack": {
+        "min": -4,
+        "max": 6
+      },
+      "defense": {
+        "min": -3,
+        "max": 3
+      },
+      "speed": {
+        "min": -2,
+        "max": 3
+      }
+    }
+  },
+  {
+    "id": "0-3",
+    "name": "Orien del Vacío",
+    "className": "Mago",
+    "tier": "Épico",
+    "minTier": "Épico",
+    "maxTier": "Legendario",
+    "maxLevel": 3,
+    "price": 62,
+    "stats": {
+      "health": 124,
+      "attack": 36,
+      "defense": 14,
+      "speed": 22
+    },
+    "caps": {
+      "health": {
+        "min": -9,
+        "max": 11
+      },
+      "attack": {
+        "min": -4,
+        "max": 7
+      },
+      "defense": {
+        "min": -3,
+        "max": 4
+      },
+      "speed": {
+        "min": -2,
+        "max": 4
+      }
+    }
+  },
+  {
+    "id": "0-4",
+    "name": "Zareth, el Inmortal",
+    "className": "Mago",
+    "tier": "Legendario",
+    "minTier": "Legendario",
+    "maxTier": "Legendario",
+    "maxLevel": 4,
+    "price": 89,
+    "stats": {
+      "health": 142,
+      "attack": 40,
+      "defense": 16,
+      "speed": 23
+    },
+    "caps": {
+      "health": {
+        "min": -9,
+        "max": 10
+      },
+      "attack": {
+        "min": -4,
+        "max": 6
+      },
+      "defense": {
+        "min": -3,
+        "max": 3
+      },
+      "speed": {
+        "min": -2,
+        "max": 3
+      }
+    }
+  },
+  {
+    "id": "0-5",
+    "name": "Maelis de la Aurora",
+    "className": "Mago",
+    "tier": "Común",
+    "minTier": "Común",
+    "maxTier": "Legendario",
+    "maxLevel": 5,
+    "price": 30,
+    "stats": {
+      "health": 90,
+      "attack": 30,
+      "defense": 10,
+      "speed": 19
+    },
+    "caps": {
+      "health": {
+        "min": -9,
+        "max": 10
+      },
+      "attack": {
+        "min": -4,
+        "max": 6
+      },
+      "defense": {
+        "min": -3,
+        "max": 3
+      },
+      "speed": {
+        "min": -2,
+        "max": 3
+      }
+    }
+  },
+  {
+    "id": "0-6",
+    "name": "Velkar de Cristal",
+    "className": "Mago",
+    "tier": "Común",
+    "minTier": "Común",
+    "maxTier": "Legendario",
+    "maxLevel": 3,
+    "price": 26,
+    "stats": {
+      "health": 96,
+      "attack": 31,
+      "defense": 11,
+      "speed": 20
+    },
+    "caps": {
+      "health": {
+        "min": -9,
+        "max": 11
+      },
+      "attack": {
+        "min": -4,
+        "max": 7
+      },
+      "defense": {
+        "min": -3,
+        "max": 4
+      },
+      "speed": {
+        "min": -2,
+        "max": 4
+      }
+    }
+  },
+  {
+    "id": "0-7",
+    "name": "Isolde de Ceniza",
+    "className": "Mago",
+    "tier": "Raro",
+    "minTier": "Raro",
+    "maxTier": "Legendario",
+    "maxLevel": 4,
+    "price": 45,
+    "stats": {
+      "health": 108,
+      "attack": 34,
+      "defense": 12,
+      "speed": 21
+    },
+    "caps": {
+      "health": {
+        "min": -9,
+        "max": 10
+      },
+      "attack": {
+        "min": -4,
+        "max": 6
+      },
+      "defense": {
+        "min": -3,
+        "max": 3
+      },
+      "speed": {
+        "min": -2,
+        "max": 3
+      }
+    }
+  },
+  {
+    "id": "0-8",
+    "name": "Theron del Cometa",
+    "className": "Mago",
+    "tier": "Épico",
+    "minTier": "Épico",
+    "maxTier": "Legendario",
+    "maxLevel": 5,
+    "price": 66,
+    "stats": {
+      "health": 126,
+      "attack": 37,
+      "defense": 14,
+      "speed": 23
+    },
+    "caps": {
+      "health": {
+        "min": -9,
+        "max": 10
+      },
+      "attack": {
+        "min": -4,
+        "max": 6
+      },
+      "defense": {
+        "min": -3,
+        "max": 3
+      },
+      "speed": {
+        "min": -2,
+        "max": 3
+      }
+    }
+  },
+  {
+    "id": "0-9",
+    "name": "Zyra, Bruja Lunar",
+    "className": "Mago",
+    "tier": "Legendario",
+    "minTier": "Legendario",
+    "maxTier": "Legendario",
+    "maxLevel": 3,
+    "price": 87,
+    "stats": {
+      "health": 144,
+      "attack": 41,
+      "defense": 16,
+      "speed": 24
+    },
+    "caps": {
+      "health": {
+        "min": -9,
+        "max": 11
+      },
+      "attack": {
+        "min": -4,
+        "max": 7
+      },
+      "defense": {
+        "min": -3,
+        "max": 4
+      },
+      "speed": {
+        "min": -2,
+        "max": 4
+      }
+    }
+  },
+  {
+    "id": "0-10",
+    "name": "Caledor del Trueno",
+    "className": "Mago",
+    "tier": "Común",
+    "minTier": "Común",
+    "maxTier": "Legendario",
+    "maxLevel": 4,
+    "price": 28,
+    "stats": {
+      "health": 92,
+      "attack": 31,
+      "defense": 11,
+      "speed": 18
+    },
+    "caps": {
+      "health": {
+        "min": -9,
+        "max": 10
+      },
+      "attack": {
+        "min": -4,
+        "max": 6
+      },
+      "defense": {
+        "min": -3,
+        "max": 3
+      },
+      "speed": {
+        "min": -2,
+        "max": 3
+      }
+    }
+  },
+  {
+    "id": "0-11",
+    "name": "Nerea del Abismo",
+    "className": "Mago",
+    "tier": "Común",
+    "minTier": "Común",
+    "maxTier": "Legendario",
+    "maxLevel": 5,
+    "price": 30,
+    "stats": {
+      "health": 98,
+      "attack": 32,
+      "defense": 12,
+      "speed": 19
+    },
+    "caps": {
+      "health": {
+        "min": -9,
+        "max": 10
+      },
+      "attack": {
+        "min": -4,
+        "max": 6
+      },
+      "defense": {
+        "min": -3,
+        "max": 3
+      },
+      "speed": {
+        "min": -2,
+        "max": 3
+      }
+    }
+  },
+  {
+    "id": "0-12",
+    "name": "Aldren, Fuego Azul",
+    "className": "Mago",
+    "tier": "Raro",
+    "minTier": "Raro",
+    "maxTier": "Legendario",
+    "maxLevel": 3,
+    "price": 43,
+    "stats": {
+      "health": 110,
+      "attack": 35,
+      "defense": 13,
+      "speed": 20
+    },
+    "caps": {
+      "health": {
+        "min": -9,
+        "max": 11
+      },
+      "attack": {
+        "min": -4,
+        "max": 7
+      },
+      "defense": {
+        "min": -3,
+        "max": 4
+      },
+      "speed": {
+        "min": -2,
+        "max": 4
+      }
+    }
+  },
+  {
+    "id": "0-13",
+    "name": "Soriel de las Runas",
+    "className": "Mago",
+    "tier": "Épico",
+    "minTier": "Épico",
+    "maxTier": "Legendario",
+    "maxLevel": 4,
+    "price": 64,
+    "stats": {
+      "health": 128,
+      "attack": 38,
+      "defense": 15,
+      "speed": 22
+    },
+    "caps": {
+      "health": {
+        "min": -9,
+        "max": 10
+      },
+      "attack": {
+        "min": -4,
+        "max": 6
+      },
+      "defense": {
+        "min": -3,
+        "max": 3
+      },
+      "speed": {
+        "min": -2,
+        "max": 3
+      }
+    }
+  },
+  {
+    "id": "0-14",
+    "name": "Dhalia la Eterna",
+    "className": "Mago",
+    "tier": "Legendario",
+    "minTier": "Legendario",
+    "maxTier": "Legendario",
+    "maxLevel": 5,
+    "price": 91,
+    "stats": {
+      "health": 146,
+      "attack": 42,
+      "defense": 17,
+      "speed": 23
+    },
+    "caps": {
+      "health": {
+        "min": -9,
+        "max": 10
+      },
+      "attack": {
+        "min": -4,
+        "max": 6
+      },
+      "defense": {
+        "min": -3,
+        "max": 3
+      },
+      "speed": {
+        "min": -2,
+        "max": 3
+      }
+    }
+  },
+  {
+    "id": "0-15",
+    "name": "Noara del Umbral",
+    "className": "Mago",
+    "tier": "Común",
+    "minTier": "Común",
+    "maxTier": "Legendario",
+    "maxLevel": 3,
+    "price": 26,
+    "stats": {
+      "health": 94,
+      "attack": 32,
+      "defense": 11,
+      "speed": 19
+    },
+    "caps": {
+      "health": {
+        "min": -9,
+        "max": 11
+      },
+      "attack": {
+        "min": -4,
+        "max": 7
+      },
+      "defense": {
+        "min": -3,
+        "max": 4
+      },
+      "speed": {
+        "min": -2,
+        "max": 4
+      }
+    }
+  },
+  {
+    "id": "0-16",
+    "name": "Zephyr, Voz Astral",
+    "className": "Mago",
+    "tier": "Común",
+    "minTier": "Común",
+    "maxTier": "Legendario",
+    "maxLevel": 4,
+    "price": 28,
+    "stats": {
+      "health": 100,
+      "attack": 33,
+      "defense": 12,
+      "speed": 20
+    },
+    "caps": {
+      "health": {
+        "min": -9,
+        "max": 10
+      },
+      "attack": {
+        "min": -4,
+        "max": 6
+      },
+      "defense": {
+        "min": -3,
+        "max": 3
+      },
+      "speed": {
+        "min": -2,
+        "max": 3
+      }
+    }
+  },
+  {
+    "id": "0-17",
+    "name": "Edris de las Agujas",
+    "className": "Mago",
+    "tier": "Raro",
+    "minTier": "Raro",
+    "maxTier": "Legendario",
+    "maxLevel": 5,
+    "price": 47,
+    "stats": {
+      "health": 112,
+      "attack": 36,
+      "defense": 13,
+      "speed": 21
+    },
+    "caps": {
+      "health": {
+        "min": -9,
+        "max": 10
+      },
+      "attack": {
+        "min": -4,
+        "max": 6
+      },
+      "defense": {
+        "min": -3,
+        "max": 3
+      },
+      "speed": {
+        "min": -2,
+        "max": 3
+      }
+    }
+  },
+  {
+    "id": "0-18",
+    "name": "Lysander Umbrío",
+    "className": "Mago",
+    "tier": "Épico",
+    "minTier": "Épico",
+    "maxTier": "Legendario",
+    "maxLevel": 3,
+    "price": 62,
+    "stats": {
+      "health": 130,
+      "attack": 39,
+      "defense": 15,
+      "speed": 23
+    },
+    "caps": {
+      "health": {
+        "min": -9,
+        "max": 11
+      },
+      "attack": {
+        "min": -4,
+        "max": 7
+      },
+      "defense": {
+        "min": -3,
+        "max": 4
+      },
+      "speed": {
+        "min": -2,
+        "max": 4
+      }
+    }
+  },
+  {
+    "id": "0-19",
+    "name": "Talya del Invierno",
+    "className": "Mago",
+    "tier": "Legendario",
+    "minTier": "Legendario",
+    "maxTier": "Legendario",
+    "maxLevel": 4,
+    "price": 89,
+    "stats": {
+      "health": 148,
+      "attack": 43,
+      "defense": 17,
+      "speed": 24
+    },
+    "caps": {
+      "health": {
+        "min": -9,
+        "max": 10
+      },
+      "attack": {
+        "min": -4,
+        "max": 6
+      },
+      "defense": {
+        "min": -3,
+        "max": 3
+      },
+      "speed": {
+        "min": -2,
+        "max": 3
+      }
+    }
+  },
+  {
+    "id": "1-0",
+    "name": "Kael, Espada Roja",
+    "className": "Guerrero",
+    "tier": "Común",
+    "minTier": "Común",
+    "maxTier": "Legendario",
+    "maxLevel": 3,
+    "price": 28,
+    "stats": {
+      "health": 118,
+      "attack": 23,
+      "defense": 17,
+      "speed": 16
+    },
+    "caps": {
+      "health": {
+        "min": -11,
+        "max": 13
+      },
+      "attack": {
+        "min": -3,
+        "max": 6
+      },
+      "defense": {
+        "min": -3,
+        "max": 5
+      },
+      "speed": {
+        "min": -2,
+        "max": 3
+      }
+    }
+  },
+  {
+    "id": "1-1",
+    "name": "Brom Puñorroca",
+    "className": "Guerrero",
+    "tier": "Común",
+    "minTier": "Común",
+    "maxTier": "Legendario",
+    "maxLevel": 4,
+    "price": 30,
+    "stats": {
+      "health": 124,
+      "attack": 24,
+      "defense": 18,
+      "speed": 17
+    },
+    "caps": {
+      "health": {
+        "min": -11,
+        "max": 12
+      },
+      "attack": {
+        "min": -3,
+        "max": 5
+      },
+      "defense": {
+        "min": -3,
+        "max": 4
+      },
+      "speed": {
+        "min": -2,
+        "max": 2
+      }
+    }
+  },
+  {
+    "id": "1-2",
+    "name": "Syla del Alba",
+    "className": "Guerrero",
+    "tier": "Raro",
+    "minTier": "Raro",
+    "maxTier": "Legendario",
+    "maxLevel": 5,
+    "price": 43,
+    "stats": {
+      "health": 136,
+      "attack": 27,
+      "defense": 19,
+      "speed": 18
+    },
+    "caps": {
+      "health": {
+        "min": -11,
+        "max": 12
+      },
+      "attack": {
+        "min": -3,
+        "max": 5
+      },
+      "defense": {
+        "min": -3,
+        "max": 4
+      },
+      "speed": {
+        "min": -2,
+        "max": 2
+      }
+    }
+  },
+  {
+    "id": "1-3",
+    "name": "Draven Sinmiedo",
+    "className": "Guerrero",
+    "tier": "Épico",
+    "minTier": "Épico",
+    "maxTier": "Legendario",
+    "maxLevel": 3,
+    "price": 64,
+    "stats": {
+      "health": 154,
+      "attack": 30,
+      "defense": 21,
+      "speed": 20
+    },
+    "caps": {
+      "health": {
+        "min": -11,
+        "max": 13
+      },
+      "attack": {
+        "min": -3,
+        "max": 6
+      },
+      "defense": {
+        "min": -3,
+        "max": 5
+      },
+      "speed": {
+        "min": -2,
+        "max": 3
+      }
+    }
+  },
+  {
+    "id": "1-4",
+    "name": "Valdric del Ocaso",
+    "className": "Guerrero",
+    "tier": "Legendario",
+    "minTier": "Legendario",
+    "maxTier": "Legendario",
+    "maxLevel": 4,
+    "price": 91,
+    "stats": {
+      "health": 172,
+      "attack": 34,
+      "defense": 23,
+      "speed": 21
+    },
+    "caps": {
+      "health": {
+        "min": -11,
+        "max": 12
+      },
+      "attack": {
+        "min": -3,
+        "max": 5
+      },
+      "defense": {
+        "min": -3,
+        "max": 4
+      },
+      "speed": {
+        "min": -2,
+        "max": 2
+      }
+    }
+  },
+  {
+    "id": "1-5",
+    "name": "Argos Pieldura",
+    "className": "Guerrero",
+    "tier": "Común",
+    "minTier": "Común",
+    "maxTier": "Legendario",
+    "maxLevel": 5,
+    "price": 26,
+    "stats": {
+      "health": 120,
+      "attack": 24,
+      "defense": 17,
+      "speed": 17
+    },
+    "caps": {
+      "health": {
+        "min": -11,
+        "max": 12
+      },
+      "attack": {
+        "min": -3,
+        "max": 5
+      },
+      "defense": {
+        "min": -3,
+        "max": 4
+      },
+      "speed": {
+        "min": -2,
+        "max": 2
+      }
+    }
+  },
+  {
+    "id": "1-6",
+    "name": "Elara del Yunque",
+    "className": "Guerrero",
+    "tier": "Común",
+    "minTier": "Común",
+    "maxTier": "Legendario",
+    "maxLevel": 3,
+    "price": 28,
+    "stats": {
+      "health": 126,
+      "attack": 25,
+      "defense": 18,
+      "speed": 18
+    },
+    "caps": {
+      "health": {
+        "min": -11,
+        "max": 13
+      },
+      "attack": {
+        "min": -3,
+        "max": 6
+      },
+      "defense": {
+        "min": -3,
+        "max": 5
+      },
+      "speed": {
+        "min": -2,
+        "max": 3
+      }
+    }
+  },
+  {
+    "id": "1-7",
+    "name": "Roth el Rojo",
+    "className": "Guerrero",
+    "tier": "Raro",
+    "minTier": "Raro",
+    "maxTier": "Legendario",
+    "maxLevel": 4,
+    "price": 47,
+    "stats": {
+      "health": 138,
+      "attack": 28,
+      "defense": 19,
+      "speed": 19
+    },
+    "caps": {
+      "health": {
+        "min": -11,
+        "max": 12
+      },
+      "attack": {
+        "min": -3,
+        "max": 5
+      },
+      "defense": {
+        "min": -3,
+        "max": 4
+      },
+      "speed": {
+        "min": -2,
+        "max": 2
+      }
+    }
+  },
+  {
+    "id": "1-8",
+    "name": "Cedric Rompefilas",
+    "className": "Guerrero",
+    "tier": "Épico",
+    "minTier": "Épico",
+    "maxTier": "Legendario",
+    "maxLevel": 5,
+    "price": 62,
+    "stats": {
+      "health": 156,
+      "attack": 31,
+      "defense": 21,
+      "speed": 21
+    },
+    "caps": {
+      "health": {
+        "min": -11,
+        "max": 12
+      },
+      "attack": {
+        "min": -3,
+        "max": 5
+      },
+      "defense": {
+        "min": -3,
+        "max": 4
+      },
+      "speed": {
+        "min": -2,
+        "max": 2
+      }
+    }
+  },
+  {
+    "id": "1-9",
+    "name": "Brina del Norte",
+    "className": "Guerrero",
+    "tier": "Legendario",
+    "minTier": "Legendario",
+    "maxTier": "Legendario",
+    "maxLevel": 3,
+    "price": 89,
+    "stats": {
+      "health": 174,
+      "attack": 35,
+      "defense": 23,
+      "speed": 22
+    },
+    "caps": {
+      "health": {
+        "min": -11,
+        "max": 13
+      },
+      "attack": {
+        "min": -3,
+        "max": 6
+      },
+      "defense": {
+        "min": -3,
+        "max": 5
+      },
+      "speed": {
+        "min": -2,
+        "max": 3
+      }
+    }
+  },
+  {
+    "id": "1-10",
+    "name": "Gareth de Acero",
+    "className": "Guerrero",
+    "tier": "Común",
+    "minTier": "Común",
+    "maxTier": "Legendario",
+    "maxLevel": 4,
+    "price": 30,
+    "stats": {
+      "health": 122,
+      "attack": 25,
+      "defense": 18,
+      "speed": 16
+    },
+    "caps": {
+      "health": {
+        "min": -11,
+        "max": 12
+      },
+      "attack": {
+        "min": -3,
+        "max": 5
+      },
+      "defense": {
+        "min": -3,
+        "max": 4
+      },
+      "speed": {
+        "min": -2,
+        "max": 2
+      }
+    }
+  },
+  {
+    "id": "1-11",
+    "name": "Mira, Doble Filo",
+    "className": "Guerrero",
+    "tier": "Común",
+    "minTier": "Común",
+    "maxTier": "Legendario",
+    "maxLevel": 5,
+    "price": 26,
+    "stats": {
+      "health": 128,
+      "attack": 26,
+      "defense": 19,
+      "speed": 17
+    },
+    "caps": {
+      "health": {
+        "min": -11,
+        "max": 12
+      },
+      "attack": {
+        "min": -3,
+        "max": 5
+      },
+      "defense": {
+        "min": -3,
+        "max": 4
+      },
+      "speed": {
+        "min": -2,
+        "max": 2
+      }
+    }
+  },
+  {
+    "id": "1-12",
+    "name": "Torvald el Errante",
+    "className": "Guerrero",
+    "tier": "Raro",
+    "minTier": "Raro",
+    "maxTier": "Legendario",
+    "maxLevel": 3,
+    "price": 45,
+    "stats": {
+      "health": 140,
+      "attack": 29,
+      "defense": 20,
+      "speed": 18
+    },
+    "caps": {
+      "health": {
+        "min": -11,
+        "max": 13
+      },
+      "attack": {
+        "min": -3,
+        "max": 6
+      },
+      "defense": {
+        "min": -3,
+        "max": 5
+      },
+      "speed": {
+        "min": -2,
+        "max": 3
+      }
+    }
+  },
+  {
+    "id": "1-13",
+    "name": "Nahla Centella",
+    "className": "Guerrero",
+    "tier": "Épico",
+    "minTier": "Épico",
+    "maxTier": "Legendario",
+    "maxLevel": 4,
+    "price": 66,
+    "stats": {
+      "health": 158,
+      "attack": 32,
+      "defense": 22,
+      "speed": 20
+    },
+    "caps": {
+      "health": {
+        "min": -11,
+        "max": 12
+      },
+      "attack": {
+        "min": -3,
+        "max": 5
+      },
+      "defense": {
+        "min": -3,
+        "max": 4
+      },
+      "speed": {
+        "min": -2,
+        "max": 2
+      }
+    }
+  },
+  {
+    "id": "1-14",
+    "name": "Borek el Valiente",
+    "className": "Guerrero",
+    "tier": "Legendario",
+    "minTier": "Legendario",
+    "maxTier": "Legendario",
+    "maxLevel": 5,
+    "price": 87,
+    "stats": {
+      "health": 176,
+      "attack": 36,
+      "defense": 24,
+      "speed": 21
+    },
+    "caps": {
+      "health": {
+        "min": -11,
+        "max": 12
+      },
+      "attack": {
+        "min": -3,
+        "max": 5
+      },
+      "defense": {
+        "min": -3,
+        "max": 4
+      },
+      "speed": {
+        "min": -2,
+        "max": 2
+      }
+    }
+  },
+  {
+    "id": "1-15",
+    "name": "Kira Puño Gris",
+    "className": "Guerrero",
+    "tier": "Común",
+    "minTier": "Común",
+    "maxTier": "Legendario",
+    "maxLevel": 3,
+    "price": 28,
+    "stats": {
+      "health": 124,
+      "attack": 26,
+      "defense": 18,
+      "speed": 17
+    },
+    "caps": {
+      "health": {
+        "min": -11,
+        "max": 13
+      },
+      "attack": {
+        "min": -3,
+        "max": 6
+      },
+      "defense": {
+        "min": -3,
+        "max": 5
+      },
+      "speed": {
+        "min": -2,
+        "max": 3
+      }
+    }
+  },
+  {
+    "id": "1-16",
+    "name": "Hadrik del Puente",
+    "className": "Guerrero",
+    "tier": "Común",
+    "minTier": "Común",
+    "maxTier": "Legendario",
+    "maxLevel": 4,
+    "price": 30,
+    "stats": {
+      "health": 130,
+      "attack": 27,
+      "defense": 19,
+      "speed": 18
+    },
+    "caps": {
+      "health": {
+        "min": -11,
+        "max": 12
+      },
+      "attack": {
+        "min": -3,
+        "max": 5
+      },
+      "defense": {
+        "min": -3,
+        "max": 4
+      },
+      "speed": {
+        "min": -2,
+        "max": 2
+      }
+    }
+  },
+  {
+    "id": "1-17",
+    "name": "Adara la Fiera",
+    "className": "Guerrero",
+    "tier": "Raro",
+    "minTier": "Raro",
+    "maxTier": "Legendario",
+    "maxLevel": 5,
+    "price": 43,
+    "stats": {
+      "health": 142,
+      "attack": 30,
+      "defense": 20,
+      "speed": 19
+    },
+    "caps": {
+      "health": {
+        "min": -11,
+        "max": 12
+      },
+      "attack": {
+        "min": -3,
+        "max": 5
+      },
+      "defense": {
+        "min": -3,
+        "max": 4
+      },
+      "speed": {
+        "min": -2,
+        "max": 2
+      }
+    }
+  },
+  {
+    "id": "1-18",
+    "name": "Ulric del Loto",
+    "className": "Guerrero",
+    "tier": "Épico",
+    "minTier": "Épico",
+    "maxTier": "Legendario",
+    "maxLevel": 3,
+    "price": 64,
+    "stats": {
+      "health": 160,
+      "attack": 33,
+      "defense": 22,
+      "speed": 21
+    },
+    "caps": {
+      "health": {
+        "min": -11,
+        "max": 13
+      },
+      "attack": {
+        "min": -3,
+        "max": 6
+      },
+      "defense": {
+        "min": -3,
+        "max": 5
+      },
+      "speed": {
+        "min": -2,
+        "max": 3
+      }
+    }
+  },
+  {
+    "id": "1-19",
+    "name": "Daria la Invicta",
+    "className": "Guerrero",
+    "tier": "Legendario",
+    "minTier": "Legendario",
+    "maxTier": "Legendario",
+    "maxLevel": 4,
+    "price": 91,
+    "stats": {
+      "health": 178,
+      "attack": 37,
+      "defense": 24,
+      "speed": 22
+    },
+    "caps": {
+      "health": {
+        "min": -11,
+        "max": 12
+      },
+      "attack": {
+        "min": -3,
+        "max": 5
+      },
+      "defense": {
+        "min": -3,
+        "max": 4
+      },
+      "speed": {
+        "min": -2,
+        "max": 2
+      }
+    }
+  },
+  {
+    "id": "2-0",
+    "name": "Riven la Sombra",
+    "className": "Asesino",
+    "tier": "Común",
+    "minTier": "Común",
+    "maxTier": "Legendario",
+    "maxLevel": 3,
+    "price": 30,
+    "stats": {
+      "health": 85,
+      "attack": 25,
+      "defense": 11,
+      "speed": 29
+    },
+    "caps": {
+      "health": {
+        "min": -8,
+        "max": 9
+      },
+      "attack": {
+        "min": -4,
+        "max": 7
+      },
+      "defense": {
+        "min": -2,
+        "max": 3
+      },
+      "speed": {
+        "min": -3,
+        "max": 5
+      }
+    }
+  },
+  {
+    "id": "2-1",
+    "name": "Iris, Hoja Silente",
+    "className": "Asesino",
+    "tier": "Común",
+    "minTier": "Común",
+    "maxTier": "Legendario",
+    "maxLevel": 4,
+    "price": 26,
+    "stats": {
+      "health": 91,
+      "attack": 26,
+      "defense": 12,
+      "speed": 30
+    },
+    "caps": {
+      "health": {
+        "min": -8,
+        "max": 8
+      },
+      "attack": {
+        "min": -4,
+        "max": 6
+      },
+      "defense": {
+        "min": -2,
+        "max": 2
+      },
+      "speed": {
+        "min": -3,
+        "max": 4
+      }
+    }
+  },
+  {
+    "id": "2-2",
+    "name": "Noctis de las Brumas",
+    "className": "Asesino",
+    "tier": "Raro",
+    "minTier": "Raro",
+    "maxTier": "Legendario",
+    "maxLevel": 5,
+    "price": 45,
+    "stats": {
+      "health": 103,
+      "attack": 29,
+      "defense": 13,
+      "speed": 31
+    },
+    "caps": {
+      "health": {
+        "min": -8,
+        "max": 8
+      },
+      "attack": {
+        "min": -4,
+        "max": 6
+      },
+      "defense": {
+        "min": -2,
+        "max": 2
+      },
+      "speed": {
+        "min": -3,
+        "max": 4
+      }
+    }
+  },
+  {
+    "id": "2-3",
+    "name": "Sable Carmesí",
+    "className": "Asesino",
+    "tier": "Épico",
+    "minTier": "Épico",
+    "maxTier": "Legendario",
+    "maxLevel": 3,
+    "price": 66,
+    "stats": {
+      "health": 121,
+      "attack": 32,
+      "defense": 15,
+      "speed": 33
+    },
+    "caps": {
+      "health": {
+        "min": -8,
+        "max": 9
+      },
+      "attack": {
+        "min": -4,
+        "max": 7
+      },
+      "defense": {
+        "min": -2,
+        "max": 3
+      },
+      "speed": {
+        "min": -3,
+        "max": 5
+      }
+    }
+  },
+  {
+    "id": "2-4",
+    "name": "Vex la Imparable",
+    "className": "Asesino",
+    "tier": "Legendario",
+    "minTier": "Legendario",
+    "maxTier": "Legendario",
+    "maxLevel": 4,
+    "price": 87,
+    "stats": {
+      "health": 139,
+      "attack": 36,
+      "defense": 17,
+      "speed": 34
+    },
+    "caps": {
+      "health": {
+        "min": -8,
+        "max": 8
+      },
+      "attack": {
+        "min": -4,
+        "max": 6
+      },
+      "defense": {
+        "min": -2,
+        "max": 2
+      },
+      "speed": {
+        "min": -3,
+        "max": 4
+      }
+    }
+  },
+  {
+    "id": "2-5",
+    "name": "Kairo del Silencio",
+    "className": "Asesino",
+    "tier": "Común",
+    "minTier": "Común",
+    "maxTier": "Legendario",
+    "maxLevel": 5,
+    "price": 28,
+    "stats": {
+      "health": 87,
+      "attack": 26,
+      "defense": 11,
+      "speed": 30
+    },
+    "caps": {
+      "health": {
+        "min": -8,
+        "max": 8
+      },
+      "attack": {
+        "min": -4,
+        "max": 6
+      },
+      "defense": {
+        "min": -2,
+        "max": 2
+      },
+      "speed": {
+        "min": -3,
+        "max": 4
+      }
+    }
+  },
+  {
+    "id": "2-6",
+    "name": "Sira la Umbría",
+    "className": "Asesino",
+    "tier": "Común",
+    "minTier": "Común",
+    "maxTier": "Legendario",
+    "maxLevel": 3,
+    "price": 30,
+    "stats": {
+      "health": 93,
+      "attack": 27,
+      "defense": 12,
+      "speed": 31
+    },
+    "caps": {
+      "health": {
+        "min": -8,
+        "max": 9
+      },
+      "attack": {
+        "min": -4,
+        "max": 7
+      },
+      "defense": {
+        "min": -2,
+        "max": 3
+      },
+      "speed": {
+        "min": -3,
+        "max": 5
+      }
+    }
+  },
+  {
+    "id": "2-7",
+    "name": "Vesper, Daga Negra",
+    "className": "Asesino",
+    "tier": "Raro",
+    "minTier": "Raro",
+    "maxTier": "Legendario",
+    "maxLevel": 4,
+    "price": 43,
+    "stats": {
+      "health": 105,
+      "attack": 30,
+      "defense": 13,
+      "speed": 32
+    },
+    "caps": {
+      "health": {
+        "min": -8,
+        "max": 8
+      },
+      "attack": {
+        "min": -4,
+        "max": 6
+      },
+      "defense": {
+        "min": -2,
+        "max": 2
+      },
+      "speed": {
+        "min": -3,
+        "max": 4
+      }
+    }
+  },
+  {
+    "id": "2-8",
+    "name": "Akren de la Niebla",
+    "className": "Asesino",
+    "tier": "Épico",
+    "minTier": "Épico",
+    "maxTier": "Legendario",
+    "maxLevel": 5,
+    "price": 64,
+    "stats": {
+      "health": 123,
+      "attack": 33,
+      "defense": 15,
+      "speed": 34
+    },
+    "caps": {
+      "health": {
+        "min": -8,
+        "max": 8
+      },
+      "attack": {
+        "min": -4,
+        "max": 6
+      },
+      "defense": {
+        "min": -2,
+        "max": 2
+      },
+      "speed": {
+        "min": -3,
+        "max": 4
+      }
+    }
+  },
+  {
+    "id": "2-9",
+    "name": "Litha Sangrefría",
+    "className": "Asesino",
+    "tier": "Legendario",
+    "minTier": "Legendario",
+    "maxTier": "Legendario",
+    "maxLevel": 3,
+    "price": 91,
+    "stats": {
+      "health": 141,
+      "attack": 37,
+      "defense": 17,
+      "speed": 35
+    },
+    "caps": {
+      "health": {
+        "min": -8,
+        "max": 9
+      },
+      "attack": {
+        "min": -4,
+        "max": 7
+      },
+      "defense": {
+        "min": -2,
+        "max": 3
+      },
+      "speed": {
+        "min": -3,
+        "max": 5
+      }
+    }
+  },
+  {
+    "id": "2-10",
+    "name": "Yorin Sin Rostro",
+    "className": "Asesino",
+    "tier": "Común",
+    "minTier": "Común",
+    "maxTier": "Legendario",
+    "maxLevel": 4,
+    "price": 26,
+    "stats": {
+      "health": 89,
+      "attack": 27,
+      "defense": 12,
+      "speed": 29
+    },
+    "caps": {
+      "health": {
+        "min": -8,
+        "max": 8
+      },
+      "attack": {
+        "min": -4,
+        "max": 6
+      },
+      "defense": {
+        "min": -2,
+        "max": 2
+      },
+      "speed": {
+        "min": -3,
+        "max": 4
+      }
+    }
+  },
+  {
+    "id": "2-11",
+    "name": "Mara de los Cuervos",
+    "className": "Asesino",
+    "tier": "Común",
+    "minTier": "Común",
+    "maxTier": "Legendario",
+    "maxLevel": 5,
+    "price": 28,
+    "stats": {
+      "health": 95,
+      "attack": 28,
+      "defense": 13,
+      "speed": 30
+    },
+    "caps": {
+      "health": {
+        "min": -8,
+        "max": 8
+      },
+      "attack": {
+        "min": -4,
+        "max": 6
+      },
+      "defense": {
+        "min": -2,
+        "max": 2
+      },
+      "speed": {
+        "min": -3,
+        "max": 4
+      }
+    }
+  },
+  {
+    "id": "2-12",
+    "name": "Zane, Paso Ligero",
+    "className": "Asesino",
+    "tier": "Raro",
+    "minTier": "Raro",
+    "maxTier": "Legendario",
+    "maxLevel": 3,
+    "price": 47,
+    "stats": {
+      "health": 107,
+      "attack": 31,
+      "defense": 14,
+      "speed": 31
+    },
+    "caps": {
+      "health": {
+        "min": -8,
+        "max": 9
+      },
+      "attack": {
+        "min": -4,
+        "max": 7
+      },
+      "defense": {
+        "min": -2,
+        "max": 3
+      },
+      "speed": {
+        "min": -3,
+        "max": 5
+      }
+    }
+  },
+  {
+    "id": "2-13",
+    "name": "Noira del Crepúsculo",
+    "className": "Asesino",
+    "tier": "Épico",
+    "minTier": "Épico",
+    "maxTier": "Legendario",
+    "maxLevel": 4,
+    "price": 62,
+    "stats": {
+      "health": 125,
+      "attack": 34,
+      "defense": 16,
+      "speed": 33
+    },
+    "caps": {
+      "health": {
+        "min": -8,
+        "max": 8
+      },
+      "attack": {
+        "min": -4,
+        "max": 6
+      },
+      "defense": {
+        "min": -2,
+        "max": 2
+      },
+      "speed": {
+        "min": -3,
+        "max": 4
+      }
+    }
+  },
+  {
+    "id": "2-14",
+    "name": "Eris Hoja Lunar",
+    "className": "Asesino",
+    "tier": "Legendario",
+    "minTier": "Legendario",
+    "maxTier": "Legendario",
+    "maxLevel": 5,
+    "price": 89,
+    "stats": {
+      "health": 143,
+      "attack": 38,
+      "defense": 18,
+      "speed": 34
+    },
+    "caps": {
+      "health": {
+        "min": -8,
+        "max": 8
+      },
+      "attack": {
+        "min": -4,
+        "max": 6
+      },
+      "defense": {
+        "min": -2,
+        "max": 2
+      },
+      "speed": {
+        "min": -3,
+        "max": 4
+      }
+    }
+  },
+  {
+    "id": "2-15",
+    "name": "Kestral del Eco",
+    "className": "Asesino",
+    "tier": "Común",
+    "minTier": "Común",
+    "maxTier": "Legendario",
+    "maxLevel": 3,
+    "price": 30,
+    "stats": {
+      "health": 91,
+      "attack": 28,
+      "defense": 12,
+      "speed": 30
+    },
+    "caps": {
+      "health": {
+        "min": -8,
+        "max": 9
+      },
+      "attack": {
+        "min": -4,
+        "max": 7
+      },
+      "defense": {
+        "min": -2,
+        "max": 3
+      },
+      "speed": {
+        "min": -3,
+        "max": 5
+      }
+    }
+  },
+  {
+    "id": "2-16",
+    "name": "Raska de Espinas",
+    "className": "Asesino",
+    "tier": "Común",
+    "minTier": "Común",
+    "maxTier": "Legendario",
+    "maxLevel": 4,
+    "price": 26,
+    "stats": {
+      "health": 97,
+      "attack": 29,
+      "defense": 13,
+      "speed": 31
+    },
+    "caps": {
+      "health": {
+        "min": -8,
+        "max": 8
+      },
+      "attack": {
+        "min": -4,
+        "max": 6
+      },
+      "defense": {
+        "min": -2,
+        "max": 2
+      },
+      "speed": {
+        "min": -3,
+        "max": 4
+      }
+    }
+  },
+  {
+    "id": "2-17",
+    "name": "Ivar Sombra Viva",
+    "className": "Asesino",
+    "tier": "Raro",
+    "minTier": "Raro",
+    "maxTier": "Legendario",
+    "maxLevel": 5,
+    "price": 45,
+    "stats": {
+      "health": 109,
+      "attack": 32,
+      "defense": 14,
+      "speed": 32
+    },
+    "caps": {
+      "health": {
+        "min": -8,
+        "max": 8
+      },
+      "attack": {
+        "min": -4,
+        "max": 6
+      },
+      "defense": {
+        "min": -2,
+        "max": 2
+      },
+      "speed": {
+        "min": -3,
+        "max": 4
+      }
+    }
+  },
+  {
+    "id": "2-18",
+    "name": "Nymera la Gris",
+    "className": "Asesino",
+    "tier": "Épico",
+    "minTier": "Épico",
+    "maxTier": "Legendario",
+    "maxLevel": 3,
+    "price": 66,
+    "stats": {
+      "health": 127,
+      "attack": 35,
+      "defense": 16,
+      "speed": 34
+    },
+    "caps": {
+      "health": {
+        "min": -8,
+        "max": 9
+      },
+      "attack": {
+        "min": -4,
+        "max": 7
+      },
+      "defense": {
+        "min": -2,
+        "max": 3
+      },
+      "speed": {
+        "min": -3,
+        "max": 5
+      }
+    }
+  },
+  {
+    "id": "2-19",
+    "name": "Soren el Intangible",
+    "className": "Asesino",
+    "tier": "Legendario",
+    "minTier": "Legendario",
+    "maxTier": "Legendario",
+    "maxLevel": 4,
+    "price": 87,
+    "stats": {
+      "health": 145,
+      "attack": 39,
+      "defense": 18,
+      "speed": 35
+    },
+    "caps": {
+      "health": {
+        "min": -8,
+        "max": 8
+      },
+      "attack": {
+        "min": -4,
+        "max": 6
+      },
+      "defense": {
+        "min": -2,
+        "max": 2
+      },
+      "speed": {
+        "min": -3,
+        "max": 4
+      }
+    }
+  },
+  {
+    "id": "3-0",
+    "name": "Lumi del Bosque",
+    "className": "Apoyo",
+    "tier": "Común",
+    "minTier": "Común",
+    "maxTier": "Legendario",
+    "maxLevel": 3,
+    "price": 26,
+    "stats": {
+      "health": 103,
+      "attack": 15,
+      "defense": 15,
+      "speed": 20
+    },
+    "caps": {
+      "health": {
+        "min": -8,
+        "max": 15
+      },
+      "attack": {
+        "min": -2,
+        "max": 4
+      },
+      "defense": {
+        "min": -2,
+        "max": 4
+      },
+      "speed": {
+        "min": -2,
+        "max": 3
+      }
+    }
+  },
+  {
+    "id": "3-1",
+    "name": "Thalia de la Luz",
+    "className": "Apoyo",
+    "tier": "Común",
+    "minTier": "Común",
+    "maxTier": "Legendario",
+    "maxLevel": 4,
+    "price": 28,
+    "stats": {
+      "health": 109,
+      "attack": 16,
+      "defense": 16,
+      "speed": 21
+    },
+    "caps": {
+      "health": {
+        "min": -8,
+        "max": 14
+      },
+      "attack": {
+        "min": -2,
+        "max": 3
+      },
+      "defense": {
+        "min": -2,
+        "max": 3
+      },
+      "speed": {
+        "min": -2,
+        "max": 2
+      }
+    }
+  },
+  {
+    "id": "3-2",
+    "name": "Fenn el Bardo",
+    "className": "Apoyo",
+    "tier": "Raro",
+    "minTier": "Raro",
+    "maxTier": "Legendario",
+    "maxLevel": 5,
+    "price": 47,
+    "stats": {
+      "health": 121,
+      "attack": 19,
+      "defense": 17,
+      "speed": 22
+    },
+    "caps": {
+      "health": {
+        "min": -8,
+        "max": 14
+      },
+      "attack": {
+        "min": -2,
+        "max": 3
+      },
+      "defense": {
+        "min": -2,
+        "max": 3
+      },
+      "speed": {
+        "min": -2,
+        "max": 2
+      }
+    }
+  },
+  {
+    "id": "3-3",
+    "name": "Alia del Santuario",
+    "className": "Apoyo",
+    "tier": "Épico",
+    "minTier": "Épico",
+    "maxTier": "Legendario",
+    "maxLevel": 3,
+    "price": 62,
+    "stats": {
+      "health": 139,
+      "attack": 22,
+      "defense": 19,
+      "speed": 24
+    },
+    "caps": {
+      "health": {
+        "min": -8,
+        "max": 15
+      },
+      "attack": {
+        "min": -2,
+        "max": 4
+      },
+      "defense": {
+        "min": -2,
+        "max": 4
+      },
+      "speed": {
+        "min": -2,
+        "max": 3
+      }
+    }
+  },
+  {
+    "id": "3-4",
+    "name": "Seraphine del Sol",
+    "className": "Apoyo",
+    "tier": "Legendario",
+    "minTier": "Legendario",
+    "maxTier": "Legendario",
+    "maxLevel": 4,
+    "price": 89,
+    "stats": {
+      "health": 157,
+      "attack": 26,
+      "defense": 21,
+      "speed": 25
+    },
+    "caps": {
+      "health": {
+        "min": -8,
+        "max": 14
+      },
+      "attack": {
+        "min": -2,
+        "max": 3
+      },
+      "defense": {
+        "min": -2,
+        "max": 3
+      },
+      "speed": {
+        "min": -2,
+        "max": 2
+      }
+    }
+  },
+  {
+    "id": "3-5",
+    "name": "Aurea del Manantial",
+    "className": "Apoyo",
+    "tier": "Común",
+    "minTier": "Común",
+    "maxTier": "Legendario",
+    "maxLevel": 5,
+    "price": 30,
+    "stats": {
+      "health": 105,
+      "attack": 16,
+      "defense": 15,
+      "speed": 21
+    },
+    "caps": {
+      "health": {
+        "min": -8,
+        "max": 14
+      },
+      "attack": {
+        "min": -2,
+        "max": 3
+      },
+      "defense": {
+        "min": -2,
+        "max": 3
+      },
+      "speed": {
+        "min": -2,
+        "max": 2
+      }
+    }
+  },
+  {
+    "id": "3-6",
+    "name": "Bardo Miren",
+    "className": "Apoyo",
+    "tier": "Común",
+    "minTier": "Común",
+    "maxTier": "Legendario",
+    "maxLevel": 3,
+    "price": 26,
+    "stats": {
+      "health": 111,
+      "attack": 17,
+      "defense": 16,
+      "speed": 22
+    },
+    "caps": {
+      "health": {
+        "min": -8,
+        "max": 15
+      },
+      "attack": {
+        "min": -2,
+        "max": 4
+      },
+      "defense": {
+        "min": -2,
+        "max": 4
+      },
+      "speed": {
+        "min": -2,
+        "max": 3
+      }
+    }
+  },
+  {
+    "id": "3-7",
+    "name": "Lira de las Flores",
+    "className": "Apoyo",
+    "tier": "Raro",
+    "minTier": "Raro",
+    "maxTier": "Legendario",
+    "maxLevel": 4,
+    "price": 45,
+    "stats": {
+      "health": 123,
+      "attack": 20,
+      "defense": 17,
+      "speed": 23
+    },
+    "caps": {
+      "health": {
+        "min": -8,
+        "max": 14
+      },
+      "attack": {
+        "min": -2,
+        "max": 3
+      },
+      "defense": {
+        "min": -2,
+        "max": 3
+      },
+      "speed": {
+        "min": -2,
+        "max": 2
+      }
+    }
+  },
+  {
+    "id": "3-8",
+    "name": "Oren el Sanador",
+    "className": "Apoyo",
+    "tier": "Épico",
+    "minTier": "Épico",
+    "maxTier": "Legendario",
+    "maxLevel": 5,
+    "price": 66,
+    "stats": {
+      "health": 141,
+      "attack": 23,
+      "defense": 19,
+      "speed": 25
+    },
+    "caps": {
+      "health": {
+        "min": -8,
+        "max": 14
+      },
+      "attack": {
+        "min": -2,
+        "max": 3
+      },
+      "defense": {
+        "min": -2,
+        "max": 3
+      },
+      "speed": {
+        "min": -2,
+        "max": 2
+      }
+    }
+  },
+  {
+    "id": "3-9",
+    "name": "Ysolde de la Brisa",
+    "className": "Apoyo",
+    "tier": "Legendario",
+    "minTier": "Legendario",
+    "maxTier": "Legendario",
+    "maxLevel": 3,
+    "price": 87,
+    "stats": {
+      "health": 159,
+      "attack": 27,
+      "defense": 21,
+      "speed": 26
+    },
+    "caps": {
+      "health": {
+        "min": -8,
+        "max": 15
+      },
+      "attack": {
+        "min": -2,
+        "max": 4
+      },
+      "defense": {
+        "min": -2,
+        "max": 4
+      },
+      "speed": {
+        "min": -2,
+        "max": 3
+      }
+    }
+  },
+  {
+    "id": "3-10",
+    "name": "Mina, Guardiana Solar",
+    "className": "Apoyo",
+    "tier": "Común",
+    "minTier": "Común",
+    "maxTier": "Legendario",
+    "maxLevel": 4,
+    "price": 28,
+    "stats": {
+      "health": 107,
+      "attack": 17,
+      "defense": 16,
+      "speed": 20
+    },
+    "caps": {
+      "health": {
+        "min": -8,
+        "max": 14
+      },
+      "attack": {
+        "min": -2,
+        "max": 3
+      },
+      "defense": {
+        "min": -2,
+        "max": 3
+      },
+      "speed": {
+        "min": -2,
+        "max": 2
+      }
+    }
+  },
+  {
+    "id": "3-11",
+    "name": "Dewin el Paciente",
+    "className": "Apoyo",
+    "tier": "Común",
+    "minTier": "Común",
+    "maxTier": "Legendario",
+    "maxLevel": 5,
+    "price": 30,
+    "stats": {
+      "health": 113,
+      "attack": 18,
+      "defense": 17,
+      "speed": 21
+    },
+    "caps": {
+      "health": {
+        "min": -8,
+        "max": 14
+      },
+      "attack": {
+        "min": -2,
+        "max": 3
+      },
+      "defense": {
+        "min": -2,
+        "max": 3
+      },
+      "speed": {
+        "min": -2,
+        "max": 2
+      }
+    }
+  },
+  {
+    "id": "3-12",
+    "name": "Neris del Rocío",
+    "className": "Apoyo",
+    "tier": "Raro",
+    "minTier": "Raro",
+    "maxTier": "Legendario",
+    "maxLevel": 3,
+    "price": 43,
+    "stats": {
+      "health": 125,
+      "attack": 21,
+      "defense": 18,
+      "speed": 22
+    },
+    "caps": {
+      "health": {
+        "min": -8,
+        "max": 15
+      },
+      "attack": {
+        "min": -2,
+        "max": 4
+      },
+      "defense": {
+        "min": -2,
+        "max": 4
+      },
+      "speed": {
+        "min": -2,
+        "max": 3
+      }
+    }
+  },
+  {
+    "id": "3-13",
+    "name": "Asha de los Ecos",
+    "className": "Apoyo",
+    "tier": "Épico",
+    "minTier": "Épico",
+    "maxTier": "Legendario",
+    "maxLevel": 4,
+    "price": 64,
+    "stats": {
+      "health": 143,
+      "attack": 24,
+      "defense": 20,
+      "speed": 24
+    },
+    "caps": {
+      "health": {
+        "min": -8,
+        "max": 14
+      },
+      "attack": {
+        "min": -2,
+        "max": 3
+      },
+      "defense": {
+        "min": -2,
+        "max": 3
+      },
+      "speed": {
+        "min": -2,
+        "max": 2
+      }
+    }
+  },
+  {
+    "id": "3-14",
+    "name": "Fiora la Serena",
+    "className": "Apoyo",
+    "tier": "Legendario",
+    "minTier": "Legendario",
+    "maxTier": "Legendario",
+    "maxLevel": 5,
+    "price": 91,
+    "stats": {
+      "health": 161,
+      "attack": 28,
+      "defense": 22,
+      "speed": 25
+    },
+    "caps": {
+      "health": {
+        "min": -8,
+        "max": 14
+      },
+      "attack": {
+        "min": -2,
+        "max": 3
+      },
+      "defense": {
+        "min": -2,
+        "max": 3
+      },
+      "speed": {
+        "min": -2,
+        "max": 2
+      }
+    }
+  },
+  {
+    "id": "3-15",
+    "name": "Iria del Refugio",
+    "className": "Apoyo",
+    "tier": "Común",
+    "minTier": "Común",
+    "maxTier": "Legendario",
+    "maxLevel": 3,
+    "price": 26,
+    "stats": {
+      "health": 109,
+      "attack": 18,
+      "defense": 16,
+      "speed": 21
+    },
+    "caps": {
+      "health": {
+        "min": -8,
+        "max": 15
+      },
+      "attack": {
+        "min": -2,
+        "max": 4
+      },
+      "defense": {
+        "min": -2,
+        "max": 4
+      },
+      "speed": {
+        "min": -2,
+        "max": 3
+      }
+    }
+  },
+  {
+    "id": "3-16",
+    "name": "Talem de la Armonía",
+    "className": "Apoyo",
+    "tier": "Común",
+    "minTier": "Común",
+    "maxTier": "Legendario",
+    "maxLevel": 4,
+    "price": 28,
+    "stats": {
+      "health": 115,
+      "attack": 19,
+      "defense": 17,
+      "speed": 22
+    },
+    "caps": {
+      "health": {
+        "min": -8,
+        "max": 14
+      },
+      "attack": {
+        "min": -2,
+        "max": 3
+      },
+      "defense": {
+        "min": -2,
+        "max": 3
+      },
+      "speed": {
+        "min": -2,
+        "max": 2
+      }
+    }
+  },
+  {
+    "id": "3-17",
+    "name": "Sae de las Mareas",
+    "className": "Apoyo",
+    "tier": "Raro",
+    "minTier": "Raro",
+    "maxTier": "Legendario",
+    "maxLevel": 5,
+    "price": 47,
+    "stats": {
+      "health": 127,
+      "attack": 22,
+      "defense": 18,
+      "speed": 23
+    },
+    "caps": {
+      "health": {
+        "min": -8,
+        "max": 14
+      },
+      "attack": {
+        "min": -2,
+        "max": 3
+      },
+      "defense": {
+        "min": -2,
+        "max": 3
+      },
+      "speed": {
+        "min": -2,
+        "max": 2
+      }
+    }
+  },
+  {
+    "id": "3-18",
+    "name": "Briar, Voz Verde",
+    "className": "Apoyo",
+    "tier": "Épico",
+    "minTier": "Épico",
+    "maxTier": "Legendario",
+    "maxLevel": 3,
+    "price": 62,
+    "stats": {
+      "health": 145,
+      "attack": 25,
+      "defense": 20,
+      "speed": 25
+    },
+    "caps": {
+      "health": {
+        "min": -8,
+        "max": 15
+      },
+      "attack": {
+        "min": -2,
+        "max": 4
+      },
+      "defense": {
+        "min": -2,
+        "max": 4
+      },
+      "speed": {
+        "min": -2,
+        "max": 3
+      }
+    }
+  },
+  {
+    "id": "3-19",
+    "name": "Elynn del Resplandor",
+    "className": "Apoyo",
+    "tier": "Legendario",
+    "minTier": "Legendario",
+    "maxTier": "Legendario",
+    "maxLevel": 4,
+    "price": 89,
+    "stats": {
+      "health": 163,
+      "attack": 29,
+      "defense": 22,
+      "speed": 26
+    },
+    "caps": {
+      "health": {
+        "min": -8,
+        "max": 14
+      },
+      "attack": {
+        "min": -2,
+        "max": 3
+      },
+      "defense": {
+        "min": -2,
+        "max": 3
+      },
+      "speed": {
+        "min": -2,
+        "max": 2
+      }
+    }
+  },
+  {
+    "id": "4-0",
+    "name": "Gorram el Firme",
+    "className": "Tanque",
+    "tier": "Común",
+    "minTier": "Común",
+    "maxTier": "Legendario",
+    "maxLevel": 3,
+    "price": 28,
+    "stats": {
+      "health": 150,
+      "attack": 17,
+      "defense": 25,
+      "speed": 10
+    },
+    "caps": {
+      "health": {
+        "min": -14,
+        "max": 17
+      },
+      "attack": {
+        "min": -2,
+        "max": 4
+      },
+      "defense": {
+        "min": -4,
+        "max": 7
+      },
+      "speed": {
+        "min": -1,
+        "max": 3
+      }
+    }
+  },
+  {
+    "id": "4-1",
+    "name": "Helga de Hierro",
+    "className": "Tanque",
+    "tier": "Común",
+    "minTier": "Común",
+    "maxTier": "Legendario",
+    "maxLevel": 4,
+    "price": 30,
+    "stats": {
+      "health": 156,
+      "attack": 18,
+      "defense": 26,
+      "speed": 11
+    },
+    "caps": {
+      "health": {
+        "min": -14,
+        "max": 16
+      },
+      "attack": {
+        "min": -2,
+        "max": 3
+      },
+      "defense": {
+        "min": -4,
+        "max": 6
+      },
+      "speed": {
+        "min": -1,
+        "max": 2
+      }
+    }
+  },
+  {
+    "id": "4-2",
+    "name": "Doran el Bastión",
+    "className": "Tanque",
+    "tier": "Raro",
+    "minTier": "Raro",
+    "maxTier": "Legendario",
+    "maxLevel": 5,
+    "price": 43,
+    "stats": {
+      "health": 168,
+      "attack": 21,
+      "defense": 27,
+      "speed": 12
+    },
+    "caps": {
+      "health": {
+        "min": -14,
+        "max": 16
+      },
+      "attack": {
+        "min": -2,
+        "max": 3
+      },
+      "defense": {
+        "min": -4,
+        "max": 6
+      },
+      "speed": {
+        "min": -1,
+        "max": 2
+      }
+    }
+  },
+  {
+    "id": "4-3",
+    "name": "Orrik Muralla",
+    "className": "Tanque",
+    "tier": "Épico",
+    "minTier": "Épico",
+    "maxTier": "Legendario",
+    "maxLevel": 3,
+    "price": 64,
+    "stats": {
+      "health": 186,
+      "attack": 24,
+      "defense": 29,
+      "speed": 14
+    },
+    "caps": {
+      "health": {
+        "min": -14,
+        "max": 17
+      },
+      "attack": {
+        "min": -2,
+        "max": 4
+      },
+      "defense": {
+        "min": -4,
+        "max": 7
+      },
+      "speed": {
+        "min": -1,
+        "max": 3
+      }
+    }
+  },
+  {
+    "id": "4-4",
+    "name": "Thorgar, el Eterno",
+    "className": "Tanque",
+    "tier": "Legendario",
+    "minTier": "Legendario",
+    "maxTier": "Legendario",
+    "maxLevel": 4,
+    "price": 91,
+    "stats": {
+      "health": 204,
+      "attack": 28,
+      "defense": 31,
+      "speed": 15
+    },
+    "caps": {
+      "health": {
+        "min": -14,
+        "max": 16
+      },
+      "attack": {
+        "min": -2,
+        "max": 3
+      },
+      "defense": {
+        "min": -4,
+        "max": 6
+      },
+      "speed": {
+        "min": -1,
+        "max": 2
+      }
+    }
+  },
+  {
+    "id": "4-5",
+    "name": "Baldr Escudofirme",
+    "className": "Tanque",
+    "tier": "Común",
+    "minTier": "Común",
+    "maxTier": "Legendario",
+    "maxLevel": 5,
+    "price": 26,
+    "stats": {
+      "health": 152,
+      "attack": 18,
+      "defense": 25,
+      "speed": 11
+    },
+    "caps": {
+      "health": {
+        "min": -14,
+        "max": 16
+      },
+      "attack": {
+        "min": -2,
+        "max": 3
+      },
+      "defense": {
+        "min": -4,
+        "max": 6
+      },
+      "speed": {
+        "min": -1,
+        "max": 2
+      }
+    }
+  },
+  {
+    "id": "4-6",
+    "name": "Runa Corazón Roca",
+    "className": "Tanque",
+    "tier": "Común",
+    "minTier": "Común",
+    "maxTier": "Legendario",
+    "maxLevel": 3,
+    "price": 28,
+    "stats": {
+      "health": 158,
+      "attack": 19,
+      "defense": 26,
+      "speed": 12
+    },
+    "caps": {
+      "health": {
+        "min": -14,
+        "max": 17
+      },
+      "attack": {
+        "min": -2,
+        "max": 4
+      },
+      "defense": {
+        "min": -4,
+        "max": 7
+      },
+      "speed": {
+        "min": -1,
+        "max": 3
+      }
+    }
+  },
+  {
+    "id": "4-7",
+    "name": "Elgor del Portón",
+    "className": "Tanque",
+    "tier": "Raro",
+    "minTier": "Raro",
+    "maxTier": "Legendario",
+    "maxLevel": 4,
+    "price": 47,
+    "stats": {
+      "health": 170,
+      "attack": 22,
+      "defense": 27,
+      "speed": 13
+    },
+    "caps": {
+      "health": {
+        "min": -14,
+        "max": 16
+      },
+      "attack": {
+        "min": -2,
+        "max": 3
+      },
+      "defense": {
+        "min": -4,
+        "max": 6
+      },
+      "speed": {
+        "min": -1,
+        "max": 2
+      }
+    }
+  },
+  {
+    "id": "4-8",
+    "name": "Bastión Morkar",
+    "className": "Tanque",
+    "tier": "Épico",
+    "minTier": "Épico",
+    "maxTier": "Legendario",
+    "maxLevel": 5,
+    "price": 62,
+    "stats": {
+      "health": 188,
+      "attack": 25,
+      "defense": 29,
+      "speed": 15
+    },
+    "caps": {
+      "health": {
+        "min": -14,
+        "max": 16
+      },
+      "attack": {
+        "min": -2,
+        "max": 3
+      },
+      "defense": {
+        "min": -4,
+        "max": 6
+      },
+      "speed": {
+        "min": -1,
+        "max": 2
+      }
+    }
+  },
+  {
+    "id": "4-9",
+    "name": "Gilda Murallón",
+    "className": "Tanque",
+    "tier": "Legendario",
+    "minTier": "Legendario",
+    "maxTier": "Legendario",
+    "maxLevel": 3,
+    "price": 89,
+    "stats": {
+      "health": 206,
+      "attack": 29,
+      "defense": 31,
+      "speed": 16
+    },
+    "caps": {
+      "health": {
+        "min": -14,
+        "max": 17
+      },
+      "attack": {
+        "min": -2,
+        "max": 4
+      },
+      "defense": {
+        "min": -4,
+        "max": 7
+      },
+      "speed": {
+        "min": -1,
+        "max": 3
+      }
+    }
+  },
+  {
+    "id": "4-10",
+    "name": "Rokan de Granito",
+    "className": "Tanque",
+    "tier": "Común",
+    "minTier": "Común",
+    "maxTier": "Legendario",
+    "maxLevel": 4,
+    "price": 30,
+    "stats": {
+      "health": 154,
+      "attack": 19,
+      "defense": 26,
+      "speed": 10
+    },
+    "caps": {
+      "health": {
+        "min": -14,
+        "max": 16
+      },
+      "attack": {
+        "min": -2,
+        "max": 3
+      },
+      "defense": {
+        "min": -4,
+        "max": 6
+      },
+      "speed": {
+        "min": -1,
+        "max": 2
+      }
+    }
+  },
+  {
+    "id": "4-11",
+    "name": "Brynn de Hierro",
+    "className": "Tanque",
+    "tier": "Común",
+    "minTier": "Común",
+    "maxTier": "Legendario",
+    "maxLevel": 5,
+    "price": 26,
+    "stats": {
+      "health": 160,
+      "attack": 20,
+      "defense": 27,
+      "speed": 11
+    },
+    "caps": {
+      "health": {
+        "min": -14,
+        "max": 16
+      },
+      "attack": {
+        "min": -2,
+        "max": 3
+      },
+      "defense": {
+        "min": -4,
+        "max": 6
+      },
+      "speed": {
+        "min": -1,
+        "max": 2
+      }
+    }
+  },
+  {
+    "id": "4-12",
+    "name": "Taros, Escudo Azul",
+    "className": "Tanque",
+    "tier": "Raro",
+    "minTier": "Raro",
+    "maxTier": "Legendario",
+    "maxLevel": 3,
+    "price": 45,
+    "stats": {
+      "health": 172,
+      "attack": 23,
+      "defense": 28,
+      "speed": 12
+    },
+    "caps": {
+      "health": {
+        "min": -14,
+        "max": 17
+      },
+      "attack": {
+        "min": -2,
+        "max": 4
+      },
+      "defense": {
+        "min": -4,
+        "max": 7
+      },
+      "speed": {
+        "min": -1,
+        "max": 3
+      }
+    }
+  },
+  {
+    "id": "4-13",
+    "name": "Norgar el Guardián",
+    "className": "Tanque",
+    "tier": "Épico",
+    "minTier": "Épico",
+    "maxTier": "Legendario",
+    "maxLevel": 4,
+    "price": 66,
+    "stats": {
+      "health": 190,
+      "attack": 26,
+      "defense": 30,
+      "speed": 14
+    },
+    "caps": {
+      "health": {
+        "min": -14,
+        "max": 16
+      },
+      "attack": {
+        "min": -2,
+        "max": 3
+      },
+      "defense": {
+        "min": -4,
+        "max": 6
+      },
+      "speed": {
+        "min": -1,
+        "max": 2
+      }
+    }
+  },
+  {
+    "id": "4-14",
+    "name": "Heska del Martillo",
+    "className": "Tanque",
+    "tier": "Legendario",
+    "minTier": "Legendario",
+    "maxTier": "Legendario",
+    "maxLevel": 5,
+    "price": 87,
+    "stats": {
+      "health": 208,
+      "attack": 30,
+      "defense": 32,
+      "speed": 15
+    },
+    "caps": {
+      "health": {
+        "min": -14,
+        "max": 16
+      },
+      "attack": {
+        "min": -2,
+        "max": 3
+      },
+      "defense": {
+        "min": -4,
+        "max": 6
+      },
+      "speed": {
+        "min": -1,
+        "max": 2
+      }
+    }
+  },
+  {
+    "id": "4-15",
+    "name": "Marduk de la Torre",
+    "className": "Tanque",
+    "tier": "Común",
+    "minTier": "Común",
+    "maxTier": "Legendario",
+    "maxLevel": 3,
+    "price": 28,
+    "stats": {
+      "health": 156,
+      "attack": 20,
+      "defense": 26,
+      "speed": 11
+    },
+    "caps": {
+      "health": {
+        "min": -14,
+        "max": 17
+      },
+      "attack": {
+        "min": -2,
+        "max": 4
+      },
+      "defense": {
+        "min": -4,
+        "max": 7
+      },
+      "speed": {
+        "min": -1,
+        "max": 3
+      }
+    }
+  },
+  {
+    "id": "4-16",
+    "name": "Hilda Inamovible",
+    "className": "Tanque",
+    "tier": "Común",
+    "minTier": "Común",
+    "maxTier": "Legendario",
+    "maxLevel": 4,
+    "price": 30,
+    "stats": {
+      "health": 162,
+      "attack": 21,
+      "defense": 27,
+      "speed": 12
+    },
+    "caps": {
+      "health": {
+        "min": -14,
+        "max": 16
+      },
+      "attack": {
+        "min": -2,
+        "max": 3
+      },
+      "defense": {
+        "min": -4,
+        "max": 6
+      },
+      "speed": {
+        "min": -1,
+        "max": 2
+      }
+    }
+  },
+  {
+    "id": "4-17",
+    "name": "Ragnar, Filo Roto",
+    "className": "Tanque",
+    "tier": "Raro",
+    "minTier": "Raro",
+    "maxTier": "Legendario",
+    "maxLevel": 5,
+    "price": 43,
+    "stats": {
+      "health": 174,
+      "attack": 24,
+      "defense": 28,
+      "speed": 13
+    },
+    "caps": {
+      "health": {
+        "min": -14,
+        "max": 16
+      },
+      "attack": {
+        "min": -2,
+        "max": 3
+      },
+      "defense": {
+        "min": -4,
+        "max": 6
+      },
+      "speed": {
+        "min": -1,
+        "max": 2
+      }
+    }
+  },
+  {
+    "id": "4-18",
+    "name": "Albron del Bastión",
+    "className": "Tanque",
+    "tier": "Épico",
+    "minTier": "Épico",
+    "maxTier": "Legendario",
+    "maxLevel": 3,
+    "price": 64,
+    "stats": {
+      "health": 192,
+      "attack": 27,
+      "defense": 30,
+      "speed": 15
+    },
+    "caps": {
+      "health": {
+        "min": -14,
+        "max": 17
+      },
+      "attack": {
+        "min": -2,
+        "max": 4
+      },
+      "defense": {
+        "min": -4,
+        "max": 7
+      },
+      "speed": {
+        "min": -1,
+        "max": 3
+      }
+    }
+  },
+  {
+    "id": "4-19",
+    "name": "Tersa la Montaña",
+    "className": "Tanque",
+    "tier": "Legendario",
+    "minTier": "Legendario",
+    "maxTier": "Legendario",
+    "maxLevel": 4,
+    "price": 91,
+    "stats": {
+      "health": 210,
+      "attack": 31,
+      "defense": 32,
+      "speed": 16
+    },
+    "caps": {
+      "health": {
+        "min": -14,
+        "max": 16
+      },
+      "attack": {
+        "min": -2,
+        "max": 3
+      },
+      "defense": {
+        "min": -4,
+        "max": 6
+      },
+      "speed": {
+        "min": -1,
+        "max": 2
+      }
+    }
+  },
+  {
+    "id": "5-0",
+    "name": "Fenris, Lobo Gris",
+    "className": "Bestia",
+    "tier": "Común",
+    "minTier": "Común",
+    "maxTier": "Legendario",
+    "maxLevel": 3,
+    "price": 30,
+    "stats": {
+      "health": 110,
+      "attack": 26,
+      "defense": 13,
+      "speed": 22
+    },
+    "caps": {
+      "health": {
+        "min": -12,
+        "max": 12
+      },
+      "attack": {
+        "min": -5,
+        "max": 8
+      },
+      "defense": {
+        "min": -3,
+        "max": 4
+      },
+      "speed": {
+        "min": -3,
+        "max": 4
+      }
+    }
+  },
+  {
+    "id": "5-1",
+    "name": "Brasa el Felino",
+    "className": "Bestia",
+    "tier": "Común",
+    "minTier": "Común",
+    "maxTier": "Legendario",
+    "maxLevel": 4,
+    "price": 26,
+    "stats": {
+      "health": 116,
+      "attack": 27,
+      "defense": 14,
+      "speed": 23
+    },
+    "caps": {
+      "health": {
+        "min": -12,
+        "max": 11
+      },
+      "attack": {
+        "min": -5,
+        "max": 7
+      },
+      "defense": {
+        "min": -3,
+        "max": 3
+      },
+      "speed": {
+        "min": -3,
+        "max": 3
+      }
+    }
+  },
+  {
+    "id": "5-2",
+    "name": "Rugido del Valle",
+    "className": "Bestia",
+    "tier": "Raro",
+    "minTier": "Raro",
+    "maxTier": "Legendario",
+    "maxLevel": 5,
+    "price": 45,
+    "stats": {
+      "health": 128,
+      "attack": 30,
+      "defense": 15,
+      "speed": 24
+    },
+    "caps": {
+      "health": {
+        "min": -12,
+        "max": 11
+      },
+      "attack": {
+        "min": -5,
+        "max": 7
+      },
+      "defense": {
+        "min": -3,
+        "max": 3
+      },
+      "speed": {
+        "min": -3,
+        "max": 3
+      }
+    }
+  },
+  {
+    "id": "5-3",
+    "name": "Escarcha Salvaje",
+    "className": "Bestia",
+    "tier": "Épico",
+    "minTier": "Épico",
+    "maxTier": "Legendario",
+    "maxLevel": 3,
+    "price": 66,
+    "stats": {
+      "health": 146,
+      "attack": 33,
+      "defense": 17,
+      "speed": 26
+    },
+    "caps": {
+      "health": {
+        "min": -12,
+        "max": 12
+      },
+      "attack": {
+        "min": -5,
+        "max": 8
+      },
+      "defense": {
+        "min": -3,
+        "max": 4
+      },
+      "speed": {
+        "min": -3,
+        "max": 4
+      }
+    }
+  },
+  {
+    "id": "5-4",
+    "name": "Hydra Primordial",
+    "className": "Bestia",
+    "tier": "Legendario",
+    "minTier": "Legendario",
+    "maxTier": "Legendario",
+    "maxLevel": 4,
+    "price": 87,
+    "stats": {
+      "health": 164,
+      "attack": 37,
+      "defense": 19,
+      "speed": 27
+    },
+    "caps": {
+      "health": {
+        "min": -12,
+        "max": 11
+      },
+      "attack": {
+        "min": -5,
+        "max": 7
+      },
+      "defense": {
+        "min": -3,
+        "max": 3
+      },
+      "speed": {
+        "min": -3,
+        "max": 3
+      }
+    }
+  },
+  {
+    "id": "5-5",
+    "name": "Onyx, Garra Nocturna",
+    "className": "Bestia",
+    "tier": "Común",
+    "minTier": "Común",
+    "maxTier": "Legendario",
+    "maxLevel": 5,
+    "price": 28,
+    "stats": {
+      "health": 112,
+      "attack": 27,
+      "defense": 13,
+      "speed": 23
+    },
+    "caps": {
+      "health": {
+        "min": -12,
+        "max": 11
+      },
+      "attack": {
+        "min": -5,
+        "max": 7
+      },
+      "defense": {
+        "min": -3,
+        "max": 3
+      },
+      "speed": {
+        "min": -3,
+        "max": 3
+      }
+    }
+  },
+  {
+    "id": "5-6",
+    "name": "Tork el Colmilludo",
+    "className": "Bestia",
+    "tier": "Común",
+    "minTier": "Común",
+    "maxTier": "Legendario",
+    "maxLevel": 3,
+    "price": 30,
+    "stats": {
+      "health": 118,
+      "attack": 28,
+      "defense": 14,
+      "speed": 24
+    },
+    "caps": {
+      "health": {
+        "min": -12,
+        "max": 12
+      },
+      "attack": {
+        "min": -5,
+        "max": 8
+      },
+      "defense": {
+        "min": -3,
+        "max": 4
+      },
+      "speed": {
+        "min": -3,
+        "max": 4
+      }
+    }
+  },
+  {
+    "id": "5-7",
+    "name": "Vaela de las Nieves",
+    "className": "Bestia",
+    "tier": "Raro",
+    "minTier": "Raro",
+    "maxTier": "Legendario",
+    "maxLevel": 4,
+    "price": 43,
+    "stats": {
+      "health": 130,
+      "attack": 31,
+      "defense": 15,
+      "speed": 25
+    },
+    "caps": {
+      "health": {
+        "min": -12,
+        "max": 11
+      },
+      "attack": {
+        "min": -5,
+        "max": 7
+      },
+      "defense": {
+        "min": -3,
+        "max": 3
+      },
+      "speed": {
+        "min": -3,
+        "max": 3
+      }
+    }
+  },
+  {
+    "id": "5-8",
+    "name": "Ceniza Feral",
+    "className": "Bestia",
+    "tier": "Épico",
+    "minTier": "Épico",
+    "maxTier": "Legendario",
+    "maxLevel": 5,
+    "price": 64,
+    "stats": {
+      "health": 148,
+      "attack": 34,
+      "defense": 17,
+      "speed": 27
+    },
+    "caps": {
+      "health": {
+        "min": -12,
+        "max": 11
+      },
+      "attack": {
+        "min": -5,
+        "max": 7
+      },
+      "defense": {
+        "min": -3,
+        "max": 3
+      },
+      "speed": {
+        "min": -3,
+        "max": 3
+      }
+    }
+  },
+  {
+    "id": "5-9",
+    "name": "Rugirrayos",
+    "className": "Bestia",
+    "tier": "Legendario",
+    "minTier": "Legendario",
+    "maxTier": "Legendario",
+    "maxLevel": 3,
+    "price": 91,
+    "stats": {
+      "health": 166,
+      "attack": 38,
+      "defense": 19,
+      "speed": 28
+    },
+    "caps": {
+      "health": {
+        "min": -12,
+        "max": 12
+      },
+      "attack": {
+        "min": -5,
+        "max": 8
+      },
+      "defense": {
+        "min": -3,
+        "max": 4
+      },
+      "speed": {
+        "min": -3,
+        "max": 4
+      }
+    }
+  },
+  {
+    "id": "5-10",
+    "name": "Diente de Bruma",
+    "className": "Bestia",
+    "tier": "Común",
+    "minTier": "Común",
+    "maxTier": "Legendario",
+    "maxLevel": 4,
+    "price": 26,
+    "stats": {
+      "health": 114,
+      "attack": 28,
+      "defense": 14,
+      "speed": 22
+    },
+    "caps": {
+      "health": {
+        "min": -12,
+        "max": 11
+      },
+      "attack": {
+        "min": -5,
+        "max": 7
+      },
+      "defense": {
+        "min": -3,
+        "max": 3
+      },
+      "speed": {
+        "min": -3,
+        "max": 3
+      }
+    }
+  },
+  {
+    "id": "5-11",
+    "name": "Kora, León Dorado",
+    "className": "Bestia",
+    "tier": "Común",
+    "minTier": "Común",
+    "maxTier": "Legendario",
+    "maxLevel": 5,
+    "price": 28,
+    "stats": {
+      "health": 120,
+      "attack": 29,
+      "defense": 15,
+      "speed": 23
+    },
+    "caps": {
+      "health": {
+        "min": -12,
+        "max": 11
+      },
+      "attack": {
+        "min": -5,
+        "max": 7
+      },
+      "defense": {
+        "min": -3,
+        "max": 3
+      },
+      "speed": {
+        "min": -3,
+        "max": 3
+      }
+    }
+  },
+  {
+    "id": "5-12",
+    "name": "Morrok del Cañón",
+    "className": "Bestia",
+    "tier": "Raro",
+    "minTier": "Raro",
+    "maxTier": "Legendario",
+    "maxLevel": 3,
+    "price": 47,
+    "stats": {
+      "health": 132,
+      "attack": 32,
+      "defense": 16,
+      "speed": 24
+    },
+    "caps": {
+      "health": {
+        "min": -12,
+        "max": 12
+      },
+      "attack": {
+        "min": -5,
+        "max": 8
+      },
+      "defense": {
+        "min": -3,
+        "max": 4
+      },
+      "speed": {
+        "min": -3,
+        "max": 4
+      }
+    }
+  },
+  {
+    "id": "5-13",
+    "name": "Garra de Coral",
+    "className": "Bestia",
+    "tier": "Épico",
+    "minTier": "Épico",
+    "maxTier": "Legendario",
+    "maxLevel": 4,
+    "price": 62,
+    "stats": {
+      "health": 150,
+      "attack": 35,
+      "defense": 18,
+      "speed": 26
+    },
+    "caps": {
+      "health": {
+        "min": -12,
+        "max": 11
+      },
+      "attack": {
+        "min": -5,
+        "max": 7
+      },
+      "defense": {
+        "min": -3,
+        "max": 3
+      },
+      "speed": {
+        "min": -3,
+        "max": 3
+      }
+    }
+  },
+  {
+    "id": "5-14",
+    "name": "Umbra, Ojo Ámbar",
+    "className": "Bestia",
+    "tier": "Legendario",
+    "minTier": "Legendario",
+    "maxTier": "Legendario",
+    "maxLevel": 5,
+    "price": 89,
+    "stats": {
+      "health": 168,
+      "attack": 39,
+      "defense": 20,
+      "speed": 27
+    },
+    "caps": {
+      "health": {
+        "min": -12,
+        "max": 11
+      },
+      "attack": {
+        "min": -5,
+        "max": 7
+      },
+      "defense": {
+        "min": -3,
+        "max": 3
+      },
+      "speed": {
+        "min": -3,
+        "max": 3
+      }
+    }
+  },
+  {
+    "id": "5-15",
+    "name": "Pardus el Veloz",
+    "className": "Bestia",
+    "tier": "Común",
+    "minTier": "Común",
+    "maxTier": "Legendario",
+    "maxLevel": 3,
+    "price": 30,
+    "stats": {
+      "health": 116,
+      "attack": 29,
+      "defense": 14,
+      "speed": 23
+    },
+    "caps": {
+      "health": {
+        "min": -12,
+        "max": 12
+      },
+      "attack": {
+        "min": -5,
+        "max": 8
+      },
+      "defense": {
+        "min": -3,
+        "max": 4
+      },
+      "speed": {
+        "min": -3,
+        "max": 4
+      }
+    }
+  },
+  {
+    "id": "5-16",
+    "name": "Ardok el Feróz",
+    "className": "Bestia",
+    "tier": "Común",
+    "minTier": "Común",
+    "maxTier": "Legendario",
+    "maxLevel": 4,
+    "price": 26,
+    "stats": {
+      "health": 122,
+      "attack": 30,
+      "defense": 15,
+      "speed": 24
+    },
+    "caps": {
+      "health": {
+        "min": -12,
+        "max": 11
+      },
+      "attack": {
+        "min": -5,
+        "max": 7
+      },
+      "defense": {
+        "min": -3,
+        "max": 3
+      },
+      "speed": {
+        "min": -3,
+        "max": 3
+      }
+    }
+  },
+  {
+    "id": "5-17",
+    "name": "Grifo Malva",
+    "className": "Bestia",
+    "tier": "Raro",
+    "minTier": "Raro",
+    "maxTier": "Legendario",
+    "maxLevel": 5,
+    "price": 45,
+    "stats": {
+      "health": 134,
+      "attack": 33,
+      "defense": 16,
+      "speed": 25
+    },
+    "caps": {
+      "health": {
+        "min": -12,
+        "max": 11
+      },
+      "attack": {
+        "min": -5,
+        "max": 7
+      },
+      "defense": {
+        "min": -3,
+        "max": 3
+      },
+      "speed": {
+        "min": -3,
+        "max": 3
+      }
+    }
+  },
+  {
+    "id": "5-18",
+    "name": "Wyvern de Jade",
+    "className": "Bestia",
+    "tier": "Épico",
+    "minTier": "Épico",
+    "maxTier": "Legendario",
+    "maxLevel": 3,
+    "price": 66,
+    "stats": {
+      "health": 152,
+      "attack": 36,
+      "defense": 18,
+      "speed": 27
+    },
+    "caps": {
+      "health": {
+        "min": -12,
+        "max": 12
+      },
+      "attack": {
+        "min": -5,
+        "max": 8
+      },
+      "defense": {
+        "min": -3,
+        "max": 4
+      },
+      "speed": {
+        "min": -3,
+        "max": 4
+      }
+    }
+  },
+  {
+    "id": "5-19",
+    "name": "Cuchillo Salvaje",
+    "className": "Bestia",
+    "tier": "Legendario",
+    "minTier": "Legendario",
+    "maxTier": "Legendario",
+    "maxLevel": 4,
+    "price": 87,
+    "stats": {
+      "health": 170,
+      "attack": 40,
+      "defense": 20,
+      "speed": 28
+    },
+    "caps": {
+      "health": {
+        "min": -12,
+        "max": 11
+      },
+      "attack": {
+        "min": -5,
+        "max": 7
+      },
+      "defense": {
+        "min": -3,
+        "max": 3
+      },
+      "speed": {
+        "min": -3,
+        "max": 3
+      }
+    }
+  },
+  {
+    "id": "myth-mage",
+    "name": "Asterion, el Oráculo",
+    "className": "Mago",
+    "tier": "Mítico",
+    "minTier": "Mítico",
+    "maxTier": "Mítico",
+    "maxLevel": 0,
+    "price": 110,
+    "stats": {
+      "health": 192,
+      "attack": 66,
+      "defense": 27,
+      "speed": 33
+    },
+    "caps": {
+      "health": {
+        "min": 0,
+        "max": 0
+      },
+      "attack": {
+        "min": 0,
+        "max": 0
+      },
+      "defense": {
+        "min": 0,
+        "max": 0
+      },
+      "speed": {
+        "min": 0,
+        "max": 0
+      }
+    },
+    "ability": "cataclysm",
+    "abilityDescription": "Cataclismo: el tercer conjuro estalla contra todos los rivales."
+  },
+  {
+    "id": "myth-war",
+    "name": "Arkan, Primer Espadón",
+    "className": "Guerrero",
+    "tier": "Mítico",
+    "minTier": "Mítico",
+    "maxTier": "Mítico",
+    "maxLevel": 0,
+    "price": 118,
+    "stats": {
+      "health": 238,
+      "attack": 59,
+      "defense": 36,
+      "speed": 26
+    },
+    "caps": {
+      "health": {
+        "min": 0,
+        "max": 0
+      },
+      "attack": {
+        "min": 0,
+        "max": 0
+      },
+      "defense": {
+        "min": 0,
+        "max": 0
+      },
+      "speed": {
+        "min": 0,
+        "max": 0
+      }
+    },
+    "ability": "last_stand",
+    "abilityDescription": "Último bastión: contraataca más fuerte cuando su vida es baja."
+  },
+  {
+    "id": "myth-assassin",
+    "name": "Némesis, la Última Sombra",
+    "className": "Asesino",
+    "tier": "Mítico",
+    "minTier": "Mítico",
+    "maxTier": "Mítico",
+    "maxLevel": 0,
+    "price": 126,
+    "stats": {
+      "health": 158,
+      "attack": 65,
+      "defense": 25,
+      "speed": 49
+    },
+    "caps": {
+      "health": {
+        "min": 0,
+        "max": 0
+      },
+      "attack": {
+        "min": 0,
+        "max": 0
+      },
+      "defense": {
+        "min": 0,
+        "max": 0
+      },
+      "speed": {
+        "min": 0,
+        "max": 0
+      }
+    },
+    "ability": "execute",
+    "abilityDescription": "Ejecución: golpe especial contra enemigos muy debilitados."
+  },
+  {
+    "id": "myth-support",
+    "name": "Solaria, la Primera Luz",
+    "className": "Apoyo",
+    "tier": "Mítico",
+    "minTier": "Mítico",
+    "maxTier": "Mítico",
+    "maxLevel": 0,
+    "price": 134,
+    "stats": {
+      "health": 206,
+      "attack": 40,
+      "defense": 35,
+      "speed": 39
+    },
+    "caps": {
+      "health": {
+        "min": 0,
+        "max": 0
+      },
+      "attack": {
+        "min": 0,
+        "max": 0
+      },
+      "defense": {
+        "min": 0,
+        "max": 0
+      },
+      "speed": {
+        "min": 0,
+        "max": 0
+      }
+    },
+    "ability": "sanctuary",
+    "abilityDescription": "Santuario: cura simultáneamente a sus compañeros heridos."
+  },
+  {
+    "id": "myth-tank",
+    "name": "Kharum, Muro Primigenio",
+    "className": "Tanque",
+    "tier": "Mítico",
+    "minTier": "Mítico",
+    "maxTier": "Mítico",
+    "maxLevel": 0,
+    "price": 142,
+    "stats": {
+      "health": 325,
+      "attack": 44,
+      "defense": 62,
+      "speed": 18
+    },
+    "caps": {
+      "health": {
+        "min": 0,
+        "max": 0
+      },
+      "attack": {
+        "min": 0,
+        "max": 0
+      },
+      "defense": {
+        "min": 0,
+        "max": 0
+      },
+      "speed": {
+        "min": 0,
+        "max": 0
+      }
+    },
+    "ability": "guardian",
+    "abilityDescription": "Guardia eterna: intercepta de forma segura un golpe letal a un aliado."
+  },
+  {
+    "id": "myth-beast",
+    "name": "Vórak, Colmillo Celestial",
+    "className": "Bestia",
+    "tier": "Mítico",
+    "minTier": "Mítico",
+    "maxTier": "Mítico",
+    "maxLevel": 0,
+    "price": 150,
+    "stats": {
+      "health": 252,
+      "attack": 63,
+      "defense": 32,
+      "speed": 37
+    },
+    "caps": {
+      "health": {
+        "min": 0,
+        "max": 0
+      },
+      "attack": {
+        "min": 0,
+        "max": 0
+      },
+      "defense": {
+        "min": 0,
+        "max": 0
+      },
+      "speed": {
+        "min": 0,
+        "max": 0
+      }
+    },
+    "ability": "devour",
+    "abilityDescription": "Devorar: un golpe adicional restaura salud según el daño."
+  }
+]
